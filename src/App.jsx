@@ -1,7 +1,8 @@
 import { useState } from 'react'
 
 import './App.css'
-import Navbar from './components/Navbar'
+import Navbar from './components/Layout/Navbar'
+import Social from './components/Layout/Social'
 
 function App() {
   const [count, setCount] = useState(0)
@@ -10,6 +11,7 @@ function App() {
     <>
       <div className='bg-black min-h-screen'>
         <Navbar />
+        <Social/>
       </div>
 
     </>
