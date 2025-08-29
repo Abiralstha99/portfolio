@@ -1,20 +1,14 @@
 import { useState } from 'react'
 
 import './App.css'
-import Navbar from './components/Layout/Navbar'
-import Social from './components/Layout/Social'
+import { Layout } from './components/Layout'
+import { Intro } from './components/Sections'
 
 function App() {
-  const [count, setCount] = useState(0)
-
   return (
-    <>
-      <div className='bg-black min-h-screen'>
-        <Navbar />
-        <Social/>
-      </div>
-
-    </>
+    <Layout>
+      <Intro />
+    </Layout>
   )
 }
 
