@@ -1,8 +1,7 @@
 import { useState } from 'react'
 
 import './App.css'
-import { Layout } from './components/Layout'
-import Intro from './components/Sections/Intro'
+import { Layout, Intro } from './components'
 
 function App() {
   return (
