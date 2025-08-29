@@ -10,10 +10,10 @@ function Layout({ children }) {
             </div>
 
             {/* Main Content Area */}
-            <div className='flex-1 ml-20'>
+            <div className='flex-1 ml-20 '>
                 <Navbar />
                 <main className='flex-1'>
-                    {children}
+                    
                 </main>
             </div>
         </div>

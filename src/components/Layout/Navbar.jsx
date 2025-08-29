@@ -23,10 +23,10 @@ function Navbar() {
         <>
             <nav className='font-[Cinzel] fixed top-0 left-0 right-0 z-50 bg-black'>
                 {/* Top bar */}
-                <div className="flex items-center justify-end px-4 py-3">
+                <div className="flex items-center justify-end px-15 py-3 mt-3">
 
                     {/* Desktop links - visible on md and up */}
-                    <ul className="hidden md:flex space-x-8">
+                    <ul className="hidden md:flex space-x-12 text-1.5xl">
                         <li>
                             <a
                                 href="#home"
@@ -86,7 +86,7 @@ function Navbar() {
                     </ul>
 
                     {/* Mobile hamburger - hidden on desktop, visible on mobile */}
-                    <div className="md:hidden">
+                    <div className="md:hidden absolute right-7 top-6/5 -translate-y-1/2">
                         <Hamburger toggled={isOpen} toggle={setOpen} color="white" size={24} rounded />
                     </div>
                 </div>
@@ -95,14 +95,6 @@ function Navbar() {
             {/* Full-screen mobile menu overlay with smooth transitions */}
             <div className={`md:hidden fixed inset-0 bg-black z-40 transition-all duration-500 ease-in-out ${isOpen ? 'opacity-100 visible' : 'opacity-0 invisible'
                 }`}>
-                {/* Close button */}
-                <button
-                    onClick={() => setOpen(false)}
-                    className="absolute top-6 right-6 text-white text-2xl hover:opacity-70 transition-opacity z-50"
-                    aria-label="Close menu"
-                >
-                    ✕
-                </button>
 
                 {/* Centered menu content */}
                 <div className="flex items-center justify-center h-full">
