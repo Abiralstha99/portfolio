@@ -1,6 +1,5 @@
 import React from 'react'
-import Navbar from './Navbar'
-import Social from './Social'
+import { Navbar, Social } from '../index'
 
 function Layout({ children }) {
     return (
