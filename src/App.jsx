@@ -1,13 +1,11 @@
 import { useState } from 'react'
 
 import './App.css'
-import { Layout, Intro } from './components'
+import { Intro } from '.'
 
 function App() {
   return (
-    <Layout>
-      <Intro />
-    </Layout>
+    <Intro />
   )
 }
 
