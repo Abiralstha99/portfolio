@@ -13,15 +13,15 @@ function Intro() {
                 <Social />
             </div>
 
-            <section className='min-h-screen flex items-center px-8 pt-20'>
-                <div className='w-full max-w-6xl mx-auto flex items-center justify-between'>
-                    <div className='flex-1 justify-self-end'>
+            <section className='min-h-screen flex items-center px-8'>
+                <div className='w-full max-w-4xl mx-auto'>
+                    <div className='text-left'>
                         {/* Comment opening */}
                         <p className='text-red-400 font-mono mb-2 text-lg'>/*</p>
 
-                        <p className='text-yellow-400 font-mono mb-4 text-sm'>Hi, My name is</p>
+                        <p className='text-yellow-400 font-mono mb-1 text-sm'>Hi, My name is</p>
 
-                        <h1 className='text-green-400 text-6xl md:text-8xl leading-tight mb-4' style={{ fontFamily: 'Candal, sans-serif' }}>
+                        <h1 className='text-green-400 text-6xl md:text-8xl leading-tight mb-3' style={{ fontFamily: 'Candal, sans-serif' }}>
                             Abiral
                             <br />
                             Shrestha
@@ -40,10 +40,15 @@ function Intro() {
                             </button>
                         </div>
                     </div>
+                </div>
 
-                    <div className='w-80 h-80 rounded-full bg-amber-50 flex-shrink-0 ml-12 hidden md:block' aria-hidden>
-                        {/* decorative/profile circle */}
-                    </div>
+                {/* Circle on the right side */}
+                <div className='absolute right-8 top-1/2 transform -translate-y-1/2 w-80 h-80 rounded-full border-4 border-amber-200 bg-amber-50/20 hidden md:block flex items-center justify-center overflow-hidden'>
+                    <img
+                        src="/src/assets/Intro.JPG"
+                        alt="Abiral Shrestha"
+                        className="w-full h-full object-cover rounded-full"
+                    />
                 </div>
             </section>
         </>
