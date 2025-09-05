@@ -5,16 +5,18 @@ import InstagramIcon from '@mui/icons-material/Instagram';
 
 function Social() {
     return (
-        <div className='flex flex-col space-y-4 p-4'>
-            <a href="https://github.com/Abiralstha99" target='_blank' rel='noopener noreferrer'>
-                <GitHubIcon className='text-white hover:text-gray-400 transition-colors cursor-pointer' />
+        <div className='flex flex-col items-center space-y-6'>
+            <a href="https://github.com/Abiralstha99" target='_blank' rel='noopener noreferrer' style={{ outline: 'none' }}>
+                <GitHubIcon className='text-white hover:text-gray-300 transition-colors cursor-pointer' fontSize='large' />
             </a>
-            <a href="https://linkedin.com/in/yourprofile" target='_blank' rel='noopener noreferrer'>
-                <LinkedInIcon className='text-white hover:text-gray-400 transition-colors cursor-pointer' />
+            <a href="https://linkedin.com/in/yourprofile" target='_blank' rel='noopener noreferrer' style={{ outline: 'none' }}>
+                <LinkedInIcon className='text-white hover:text-gray-300 transition-colors cursor-pointer' fontSize='large' />
             </a>
-            <a href="https://instagram.com/yourhandle" target='_blank' rel='noopener noreferrer'>
-                <InstagramIcon className='text-white hover:text-gray-400 transition-colors cursor-pointer' />
+            <a href="https://instagram.com/yourhandle" target='_blank' rel='noopener noreferrer' style={{ outline: 'none' }}>
+                <InstagramIcon className='text-white hover:text-gray-300 transition-colors cursor-pointer' fontSize='large' />
             </a>
+            {/* Vertical line extending down */}
+            <div className='w-px h-32 bg-white opacity-30 mt-4'></div>
         </div>
     )
 }
