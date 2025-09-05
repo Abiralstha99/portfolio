@@ -1,11 +1,12 @@
 import { useState } from 'react'
-
-import './App.css'
-import { Intro } from '.'
+import { Intro, About } from '.'
 
 function App() {
   return (
-    <Intro />
+    <>
+      <Intro />
+      <About />
+    </>
   )
 }
 

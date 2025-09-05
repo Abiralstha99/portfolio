@@ -4,3 +4,4 @@ export { default as Social } from "./components/Social";
 
 // Re-export Sections
 export { default as Intro } from "./Sections/Intro";
+export { default as About } from "./Sections/About";

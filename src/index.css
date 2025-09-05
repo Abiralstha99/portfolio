@@ -1,1 +1,66 @@
 @import "tailwindcss";
+
+/* Base globals moved from App.css */
+:root {
+  color-scheme: dark;
+}
+
+html,
+body,
+#root {
+  height: 100%;
+}
+
+body {
+  margin: 0;
+  padding: 0;
+  background-color: #1a1a1a;
+  font-family: "Merriweather", serif;
+  line-height: 1.3;
+}
+
+/* Smooth scrolling */
+html {
+  scroll-behavior: smooth;
+}
+
+/* Custom scrollbar */
+::-webkit-scrollbar {
+  width: 8px;
+}
+::-webkit-scrollbar-track {
+  background: #1a1a1a;
+}
+::-webkit-scrollbar-thumb {
+  background: #66b28c;
+  border-radius: 4px;
+}
+::-webkit-scrollbar-thumb:hover {
+  background: #5aa07a;
+}
+
+/* Mobile optimizations */
+@media (max-width: 768px) {
+  body {
+    font-size: 14px;
+  }
+  /* Ensure touch targets are at least 44px */
+  button,
+  a {
+    min-height: 44px;
+    min-width: 44px;
+  }
+}
+
+/* Prevent horizontal scroll on mobile */
+@media (max-width: 640px) {
+  .overflow-x-hidden {
+    overflow-x: hidden;
+  }
+}
+
+/* Focus states for accessibility - excluding social icons */
+button:focus {
+  outline: 2px solid #66b28c;
+  outline-offset: 2px;
+}
