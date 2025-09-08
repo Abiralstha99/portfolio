@@ -63,4 +63,12 @@ html {
 button:focus {
   outline: 2px solid #66b28c;
   outline-offset: 2px;
+  outline-style: solid;
+}
+
+/* Ensure smooth transitions for button focus states */
+button:focus-visible {
+  outline: 2px solid #66b28c;
+  outline-offset: 2px;
+  transition: outline 0.2s ease-in-out;
 }
