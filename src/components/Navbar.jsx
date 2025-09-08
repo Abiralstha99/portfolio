@@ -21,7 +21,7 @@ function Navbar() {
 
     return (
         <>
-            <nav className='fixed top-0 left-0 right-0 z-50 bg-[#1a1a1a]'>
+            <nav className='w-full z-50 bg-[#1a1a1a]'>
                 {/* Top bar */}
                 <div className="flex items-center justify-center px-8 py-6">
 
@@ -30,7 +30,7 @@ function Navbar() {
                         <li>
                             <a
                                 href="#about"
-                                className="text-white hover:text-[#66b28c] transition-colors duration-300 relative pb-1"
+                                className="text-white hover:text-[#2E8B57] transition-colors duration-300 relative pb-1"
                                 onMouseEnter={() => setHovered('about')}
                                 onMouseLeave={() => setHovered(null)}
                             >
@@ -43,7 +43,7 @@ function Navbar() {
                         <li>
                             <a
                                 href="#skills"
-                                className="text-white hover:text-[#66b28c] transition-colors duration-300 relative pb-1"
+                                className="text-white hover:text-[#2E8B57] transition-colors duration-300 relative pb-1"
                                 onMouseEnter={() => setHovered('skills')}
                                 onMouseLeave={() => setHovered(null)}
                             >
@@ -56,7 +56,7 @@ function Navbar() {
                         <li>
                             <a
                                 href="#projects"
-                                className="text-white hover:text-[#66b28c] transition-colors duration-300 relative pb-1"
+                                className="text-white hover:text-[#2E8B57] transition-colors duration-300 relative pb-1"
                                 onMouseEnter={() => setHovered('projects')}
                                 onMouseLeave={() => setHovered(null)}
                             >
@@ -69,7 +69,7 @@ function Navbar() {
                         <li>
                             <a
                                 href="#contact"
-                                className="text-white hover:text-[#66b28c] transition-colors duration-300 relative pb-1"
+                                className="text-white hover:text-[#2E8B57] transition-colors duration-300 relative pb-1"
                                 onMouseEnter={() => setHovered('contact')}
                                 onMouseLeave={() => setHovered(null)}
                             >
