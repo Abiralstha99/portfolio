@@ -87,7 +87,7 @@ function About() {
           >
             {/* Section Heading */}
             <motion.h2
-              className="text-5xl md:text-6xl lg:text-7xl font-bold text-[#2E8B57] font-['Bebas_Neue',sans-serif] tracking-wide"
+              className="text-4xl md:text-5xl lg:text-6xl font-bold text-[#2E8B57] font-['Bebas_Neue',sans-serif] tracking-wide"
               variants={itemVariants}
             >
               About Me
@@ -101,7 +101,7 @@ function About() {
 
             {/* Main description */}
             <motion.p
-              className="text-lg md:text-xl lg:text-2xl text-white font-['Merriweather',serif] leading-relaxed"
+              className="text-base md:text-lg lg:text-xl text-white font-['Merriweather',serif] leading-relaxed"
               variants={itemVariants}
             >
               I am a developer with a keen interest in technology. Beside challenging
@@ -115,7 +115,7 @@ function About() {
             >
               {/* Personal Info Heading */}
               <motion.h3
-                className="text-2xl md:text-3xl font-bold text-white font-['Merriweather',serif] tracking-wide flex items-center gap-3"
+                className="text-xl md:text-2xl font-bold text-white font-['Merriweather',serif] tracking-wide flex items-center gap-3"
                 variants={itemVariants}
               >
                 <PersonIcon className="text-white" fontSize="medium" />
@@ -136,7 +136,7 @@ function About() {
                     <LocationOnIcon className="text-white" fontSize="small" />
                   </div>
                   <div>
-                    <div className="text-white font-['Merriweather',serif] text-base">
+                    <div className="text-white font-['Merriweather',serif] text-sm">
                       <span className="font-bold">Hometown:</span> Kathmandu, Nepal
                     </div>
                   </div>
@@ -151,7 +151,7 @@ function About() {
                     <CakeIcon className="text-white" fontSize="small" />
                   </div>
                   <div>
-                    <div className="text-white font-['Merriweather',serif] text-base">
+                    <div className="text-white font-['Merriweather',serif] text-sm">
                       <span className="font-bold">Date of Birth:</span> 1st June 2005
                     </div>
                   </div>
@@ -166,7 +166,7 @@ function About() {
                     <SchoolIcon className="text-white" fontSize="small" />
                   </div>
                   <div>
-                    <div className="text-white font-['Merriweather',serif] text-base">
+                    <div className="text-white font-['Merriweather',serif] text-sm">
                       <span className="font-bold">University:</span> Gettysburg College
                     </div>
                   </div>
@@ -181,7 +181,7 @@ function About() {
                     <PersonIcon className="text-white" fontSize="small" />
                   </div>
                   <div>
-                    <div className="text-white font-['Merriweather',serif] text-base">
+                    <div className="text-white font-['Merriweather',serif] text-sm">
                       <span className="font-bold">Class Year:</span> Sophomore
                     </div>
                   </div>
@@ -195,7 +195,7 @@ function About() {
               className="pt-6"
             >
               <motion.button
-                className="px-8 py-4 bg-[#2E8B57] text-white font-bold text-lg rounded-lg font-['Bebas_Neue',sans-serif] tracking-wider shadow-lg transition-all duration-300 hover:bg-[#184c30] hover:shadow-xl"
+                className="px-8 py-4 bg-[#2E8B57] text-white font-bold text-base rounded-lg font-['Merriweather',serif] tracking-wider shadow-lg transition-all duration-300 hover:bg-[#184c30] hover:shadow-xl"
                 onClick={() => window.open(Resume, '_blank')}
                 whileHover={{
                   scale: 1.05,
