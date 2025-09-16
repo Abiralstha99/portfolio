@@ -1,0 +1,26 @@
+[
+  {
+    "title": "Project 1",
+    "description": "A cool project about web development.",
+    "image": "/images/project1.png",
+    "link": "https://example.com/project1"
+  },
+  {
+    "title": "Project 2",
+    "description": "Another project showcasing Tailwind.",
+    "image": "/images/project2.png",
+    "link": "https://example.com/project2"
+  },
+  {
+    "title": "Project 3",
+    "description": "This one is about React.",
+    "image": "/images/project3.png",
+    "link": "https://example.com/project3"
+  },
+  {
+    "title": "Project 4",
+    "description": "An open-source contribution.",
+    "image": "/images/project4.png",
+    "link": "https://example.com/project4"
+  }
+]
