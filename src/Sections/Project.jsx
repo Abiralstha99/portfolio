@@ -1,4 +1,5 @@
-import React from 'react'
+import React, { useState } from 'react'
+import { motion } from 'framer-motion'
 import projects from './projects.json'
 function Project() {
   return (
@@ -16,19 +17,57 @@ function Project() {
         {/* project items */}
         <div className="w-full grid grid-cols-1 md:grid-cols-2 gap-8">
           {/* now mapping through the projects.json file  */}
-          {projects.map((project, index) => (
-            <div key={index} className="w-full flex justify-center">
-              <div className="bg-[#0f1720] rounded-lg shadow p-6 aspect-[16/10] w-full max-w-[520px] flex flex-col justify-between overflow-hidden">
-                <h2 className="text-xl text-white font-semibold mb-2">{project.title}</h2>
-                <p className="text-sm text-gray-300 mb-4">{project.description}</p>
-                {project.link && (
-                  <a href={project.link} className="text-[#f4a261] hover:underline" target="_blank" rel="noopener noreferrer">
-                    View project
-                  </a>
-                )}
-              </div>
-            </div>
-          ))}
+          {projects.map((project, index) => {
+            const [hover, setHover] = useState(false)
+            return (
+              <motion.div
+                key={index}
+                className="w-full flex justify-center"
+                initial={{ opacity: 0, y: 50 }}
+                whileInView={{ opacity: 1, y: 0 }}
+                viewport={{ once: false, amount: 0.4 }}
+                transition={{ type: 'spring', stiffness: 100, damping: 18, delay: index * 0.05 }}
+                whileHover={{ y: -6 }}
+              >
+                <div
+                  className="relative group bg-[#0f1720] border border-[#2E8B57]/40 hover:border-[#2E8B57] transition-colors rounded-lg shadow aspect-[16/10] w-full max-w-[520px] overflow-hidden"
+                  onMouseEnter={() => setHover(true)}
+                  onMouseLeave={() => setHover(false)}
+                >
+                  {/* Title always visible */}
+                  <div className="absolute top-0 left-0 right-0 p-4 pointer-events-none">
+                    <h2 className="text-xl text-white font-semibold tracking-wide">{project.title}</h2>
+                  </div>
+                  {/* Gradient overlay appears on hover */}
+                  <motion.div
+                    className="absolute inset-0 flex flex-col justify-end p-4"
+                    animate={hover ? { opacity: 1 } : { opacity: 0 }}
+                    initial={{ opacity: 0 }}
+                    transition={{ duration: 0.3 }}
+                  >
+                    <div className="absolute inset-0 bg-gradient-to-t from-black/90 via-black/60 to-transparent" />
+                    <div className="relative z-10 space-y-3">
+                      <p className="text-xs sm:text-sm text-gray-200 leading-relaxed line-clamp-5">
+                        {project.description}
+                      </p>
+                      {project.link && (
+                        <div className="flex">
+                          <a
+                            href={project.link}
+                            target="_blank"
+                            rel="noopener noreferrer"
+                            className="inline-flex items-center justify-center px-4 py-2 bg-[#2E8B57] text-white text-xs sm:text-sm font-medium rounded-md shadow hover:bg-[#236946] transition-colors"
+                          >
+                            Live
+                          </a>
+                        </div>
+                      )}
+                    </div>
+                  </motion.div>
+                </div>
+              </motion.div>
+            )
+          })}
         </div>
       </div>
     </section>
