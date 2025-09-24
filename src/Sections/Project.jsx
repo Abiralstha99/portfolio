@@ -4,18 +4,48 @@ import projects from './projects.json'
 function Project() {
   return (
     <section className="min-h-screen bg-[#1a1a1a] py-16">
+
       {/* add left padding so this section doesn't sit under a fixed left social bar */}
       <div className="max-w-7xl mx-auto w-full px-4 sm:px-8 lg:px-16 pl-20 md:pl-24 lg:pl-32 flex flex-col gap-2">
-        <h1 className="text-5xl text-[#2E8B57] font-bold text-left ">
-          Projects
-        </h1>
-        <p className="text-sm text-white">
-          A list of projects I have been working on or built
-        </p>
+        <motion.div
+          className="overflow-hidden"
+          initial={{ opacity: 0, y: 20 }}
+          whileInView={{ opacity: 1, y: 0 }}
+          viewport={{ once: true, amount: 0.3 }}
+          transition={{ duration: 0.6 }}
+        >
+          <motion.h1
+            className="text-5xl text-[#2E8B57] font-bold text-left mb-1"
+            initial={{ opacity: 0, y: 8 }}
+            whileInView={{ opacity: 1, y: 0 }}
+            viewport={{ once: true, amount: 0.3 }}
+            transition={{ duration: 0.6, delay: 0.05 }}
+          >
+            Projects
+          </motion.h1>
+          <motion.p
+            className="text-sm text-white"
+            initial={{ opacity: 0, y: 8 }}
+            whileInView={{ opacity: 1, y: 0 }}
+            viewport={{ once: true, amount: 0.3 }}
+            transition={{ duration: 0.6, delay: 0.12 }}
+          >
+            A list of projects I have been working on or built
+          </motion.p>
+        </motion.div>
 
-        <hr role="separator" className="w-full border-t border-[#f4a261] my-2" />
+        <motion.hr
+          role="separator"
+          className="w-full border-t border-[#f4a261] my-2"
+          initial={{ scaleX: 0 }}
+          whileInView={{ scaleX: 1 }}
+          viewport={{ once: true, amount: 0.3 }}
+          transition={{ duration: 0.5, delay: 0.18 }}
+          style={{ transformOrigin: 'left' }}
+        />
+
         {/* project items */}
-        <div className="w-full grid grid-cols-1 md:grid-cols-2 gap-8">
+        <div className="w-full py-6 grid grid-cols-1 md:grid-cols-2 gap-8">
           {/* now mapping through the projects.json file  */}
           {projects.map((project, index) => {
             const [hover, setHover] = useState(false)
