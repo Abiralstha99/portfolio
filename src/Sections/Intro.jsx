@@ -16,7 +16,7 @@ function Intro() {
                 <Social />
             </div>
 
-            <section className='min-h-screen flex items-center justify-center px-4 sm:px-8 bg-[#1a1a1a]'>
+            <section className='min-h-screen flex items-center justify-center px-4 sm:px-8'>
                 <div className='text-center max-w-4xl mx-auto'>
                     {/* Main heading */}
                     <h1

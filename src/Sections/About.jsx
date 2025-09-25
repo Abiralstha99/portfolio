@@ -51,7 +51,7 @@ function About() {
   return (
     <motion.section
       id="about"
-      className="min-h-screen flex items-center justify-center px-4 sm:px-8 lg:px-16 bg-[#1a1a1a] py-16"
+      className="min-h-screen flex items-center justify-center px-4 sm:px-8 lg:px-16 py-16"
       initial="hidden"
       whileInView="visible"
       viewport={{ once: true, margin: "-100px" }}

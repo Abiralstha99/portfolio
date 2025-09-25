@@ -3,7 +3,7 @@ import { motion } from 'framer-motion'
 import projects from './projects.json'
 function Project() {
   return (
-    <section className="min-h-screen bg-[#1a1a1a] py-16">
+    <section className="min-h-screen py-16">
 
       {/* add left padding so this section doesn't sit under a fixed left social bar */}
       <div className="max-w-7xl mx-auto w-full px-4 sm:px-8 lg:px-16 pl-20 md:pl-24 lg:pl-32 flex flex-col gap-2">
