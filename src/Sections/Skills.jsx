@@ -1,6 +1,6 @@
 import React from 'react'
 import { motion } from 'framer-motion'
-import skillsData from './skills.json'
+import skillsData from '../data/skills.json'
 import {
     Language,
     Palette,
