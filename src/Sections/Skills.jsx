@@ -45,30 +45,6 @@ function Skills() {
         visible: { opacity: 1, y: 0, transition: { duration: 0.45 } }
     }
 
-    const iconFor = (label) => {
-        const iconMap = {
-            HTML: <Language className="text-orange-500" />,
-            CSS: <Palette className="text-blue-500" />,
-            JavaScript: <Code className="text-yellow-500" />,
-            TypeScript: <Code className="text-blue-600" />,
-            React: <AccountTree className="text-cyan-400" />,
-            Redux: <Storage className="text-purple-500" />,
-            Motion: <Timeline className="text-pink-500" />,
-            'Tailwind CSS': <Air className="text-cyan-500" />,
-            SASS: <Cake className="text-pink-500" />,
-            'Styled-Components': <Brush className="text-yellow-600" />,
-            'Node.js': <SettingsEthernet className="text-green-500" />,
-            Express: <SettingsEthernet className="text-gray-500" />,
-            MongoDB: <Storage className="text-green-600" />,
-            PostgreSQL: <DataObject className="text-blue-600" />,
-            Git: <Build className="text-orange-600" />,
-            GitHub: <GitHub className="text-white" />,
-            Postman: <PostAdd className="text-orange-500" />,
-            Figma: <IntegrationInstructions className="text-purple-500" />
-        }
-        return iconMap[label] || <Code className="text-gray-400" />
-    }
-
     return (
         <section id="skills" className="min-h-screen py-20">
             <div className="max-w-7xl mx-auto w-full px-4 sm:px-8 lg:px-16 pl-20 md:pl-24 lg:pl-32">
@@ -109,18 +85,27 @@ function Skills() {
                             >
                                 {group.skills.map((skill) => (
                                     <motion.div
-                                        key={skill}
+                                        key={skill.name}
                                         variants={itemVariants}
                                         className="flex items-center gap-4"
                                     >
-                                        <div className="w-10 h-10 rounded-full bg-white/10 flex items-center justify-center">
-                                            {iconFor(skill)}
+                                        <div className="w-10 h-10 flex items-center justify-center">
+                                            {skill.name === "GitHub" ? (
+                                                <GitHub className="text-white w-8 h-8" />
+                                            ) : (
+                                                <img
+                                                    src={skill.logo}
+                                                    alt={skill.name}
+                                                    className="w-8 h-8 object-contain"
+                                                />
+                                            )}
                                         </div>
                                         <span className="text-white text-2xl md:text-3xl font-['Merriweather',serif]">
-                                            {skill}
+                                            {skill.name}
                                         </span>
                                     </motion.div>
                                 ))}
+
                             </motion.div>
                         </div>
                     ))}
