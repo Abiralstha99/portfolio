@@ -73,13 +73,13 @@ function Intro() {
 
                     <motion.button
                         className="mt-5 px-6 py-3 rounded-lg text-white font-medium text-base bg-[#2E8B57] font-['Merriweather',serif]"
-                        onClick={() => window.open(Resume, '_blank')}
+                        onClick={() => document.getElementById('about')?.scrollIntoView({ behavior: 'smooth' })}
                         initial={{ opacity: 0 }}
                         animate={{ opacity: 1 }}
                         transition={{ duration: 0.5, delay: 1.5 }}
                         whileHover={{ scale: 1.02 }}
                     >
-                        View Resume
+                        Know More
                     </motion.button>
                 </div>
             </section>

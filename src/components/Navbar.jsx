@@ -55,14 +55,14 @@ function Navbar() {
                         </li>
                         <li>
                             <a
-                                href="#projects"
+                                href="#project"
                                 className="text-white hover:text-[#2E8B57] transition-colors duration-300 relative pb-1"
-                                onMouseEnter={() => setHovered('projects')}
+                                onMouseEnter={() => setHovered('project')}
                                 onMouseLeave={() => setHovered(null)}
                             >
                                 Project
                                 <span
-                                    className={`absolute bottom-0 left-0 h-0.5 bg-[#66b28c] transition-all duration-300 ${hovered === 'projects' ? 'w-full' : 'w-0'}`}
+                                    className={`absolute bottom-0 left-0 h-0.5 bg-[#66b28c] transition-all duration-300 ${hovered === 'project' ? 'w-full' : 'w-0'}`}
                                 ></span>
                             </a>
                         </li>
@@ -116,7 +116,7 @@ function Navbar() {
                         </li>
                         <li>
                             <a
-                                href="#projects"
+                                href="#project"
                                 className="text-white text-4xl font-light hover:text-[#66b28c] transition-colors relative pb-2 block"
                                 onClick={() => setOpen(false)}
                             >
