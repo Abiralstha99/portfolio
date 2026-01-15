@@ -1,89 +1,85 @@
 import React from 'react'
 import { motion } from 'framer-motion'
-import Navbar from '../components/Navbar'
-import Social from '../components/Social'
-import DiamondImage from '../assets/Diamond.svg'
-import Resume from '../assets/Resume_AbiralShrestha.pdf'
 
 function Intro() {
     return (
-        <>
-            {/* fixed navbar at the top */}
-            <Navbar />
-
-            {/* fixed social icons on the left (hidden on small screens) */}
-            <div className='fixed left-8 top-1/2 -translate-y-1/2 z-10 hidden md:block'>
-                <Social />
-            </div>
-
-            <section className='min-h-screen flex items-center justify-center px-4 sm:px-8'>
-                <div className='text-center max-w-4xl mx-auto'>
-                    {/* Main heading */}
-                    <h1
-                        className="text-5xl sm:text-7xl md:text-8xl lg:text-9xl xl:text-[10rem] mb-4 sm:mb-6 font-['Bebas_Neue',sans-serif] text-[#2E8B57] tracking-[0.07em] leading-[0.9] font-normal"
-                        style={{ maxWidth: '1400px', width: '100%', margin: '0 auto' }}
-                    >
-                        {/* First name - letters appear one by one */}
-                        <div className="inline-block">
-                            {"ABIRAL".split("").map((letter, index) => (
-                                <motion.span
-                                    key={index}
-                                    initial={{ opacity: 0, y: 50 }}
-                                    animate={{ opacity: 1, y: 0 }}
-                                    transition={{
-                                        duration: 0.4,
-                                        delay: index * 0.08,
-                                        ease: "easeOut"
-                                    }}
-                                    className="inline-block"
-                                >
-                                    {letter}
-                                </motion.span>
-                            ))}
-                        </div>
-                        <br />
-                        {/* Last name - appears all at once */}
-                        <motion.div
-                            className="inline-block"
-                            initial={{ opacity: 0, y: 50 }}
-                            animate={{ opacity: 1, y: 0 }}
-                            transition={{
-                                duration: 0.4,
-                                delay: 0.6, // Delay after ABIRAL finishes (6 letters * 0.08 + 0.12)
-                                ease: "easeOut"
-                            }}
-                        >
-                            SHRESTHA
-                        </motion.div>
-                    </h1>
-
-                    {/* Subtitle */}
-                    <motion.p
-                        className="text-white text-lg sm:text-xl md:text-2xl mb-8 sm:mb-16 px-4 pt-3 font-['Merriweather',serif] leading-[1.3]"
-                        initial={{ opacity: 0, y: 30 }}
+        <section className="min-h-screen flex flex-col justify-center px-6 md:px-12 lg:px-16 pt-20">
+            <div className="max-w-7xl mx-auto w-full">
+                {/* Main Hero Typography */}
+                <div className="mb-16">
+                    <motion.h1
+                        className="font-['Instrument_Serif'] text-[clamp(3rem,12vw,10rem)] text-[#1A1A1A] leading-[0.9] tracking-[-0.02em] mb-6"
+                        initial={{ opacity: 0, y: 40 }}
                         animate={{ opacity: 1, y: 0 }}
-                        transition={{
-                            duration: 0.5,
-                            delay: 1.2, // Appears after SHRESTHA (0.6 + 0.4 + 0.2)
-                            ease: "easeOut"
-                        }}
+                        transition={{ duration: 0.8, delay: 0.4, ease: [0.4, 0, 0.2, 1] }}
                     >
-                        Computer Science @ Gettysburg College
-                    </motion.p>
+                        Abiral
+                        <br />
+                        <span className="italic">Shrestha</span>
+                    </motion.h1>
 
-                    <motion.button
-                        className="mt-5 px-6 py-3 rounded-lg text-white font-medium text-base bg-[#2E8B57] font-['Merriweather',serif]"
-                        onClick={() => document.getElementById('about')?.scrollIntoView({ behavior: 'smooth' })}
-                        initial={{ opacity: 0 }}
-                        animate={{ opacity: 1 }}
-                        transition={{ duration: 0.5, delay: 1.5 }}
-                        whileHover={{ scale: 1.02 }}
+                    <motion.p
+                        className="text-sm text-[#6B6B6B] max-w-md leading-relaxed"
+                        initial={{ opacity: 0, y: 20 }}
+                        animate={{ opacity: 1, y: 0 }}
+                        transition={{ duration: 0.6, delay: 0.7 }}
                     >
-                        Know More
-                    </motion.button>
+                        Developer & designer crafting thoughtful digital
+                        experiences. Currently studying Computer Science
+                        at Gettysburg College.
+                    </motion.p>
                 </div>
-            </section>
-        </>
+
+                {/* Bento Info Grid */}
+                <motion.div
+                    className="grid grid-cols-2 md:grid-cols-4 gap-4 md:gap-6"
+                    initial={{ opacity: 0, y: 30 }}
+                    animate={{ opacity: 1, y: 0 }}
+                    transition={{ duration: 0.6, delay: 0.9 }}
+                >
+                    {/* Status Card */}
+                    <div className="bento-card bg-[#F5F5F7] p-6 rounded-lg">
+                        <p className="text-[10px] tracking-[0.2em] uppercase text-[#A0A0A0] mb-2">Status</p>
+                        <p className="text-sm text-[#1A1A1A]">Available for work</p>
+                    </div>
+
+                    {/* Location Card */}
+                    <div className="bento-card bg-[#F5F5F7] p-6 rounded-lg">
+                        <p className="text-[10px] tracking-[0.2em] uppercase text-[#A0A0A0] mb-2">Based in</p>
+                        <p className="text-sm text-[#1A1A1A]">Kathmandu, Nepal</p>
+                    </div>
+
+                    {/* Focus Card */}
+                    <div className="bento-card bg-[#F5F5F7] p-6 rounded-lg">
+                        <p className="text-[10px] tracking-[0.2em] uppercase text-[#A0A0A0] mb-2">Focus</p>
+                        <p className="text-sm text-[#1A1A1A]">Full-Stack Development</p>
+                    </div>
+
+                    {/* CTA Card */}
+                    <a
+                        href="#work"
+                        className="bento-card bg-[#1A1A1A] p-6 rounded-lg flex flex-col justify-between group"
+                    >
+                        <p className="text-[10px] tracking-[0.2em] uppercase text-[#A0A0A0] mb-2">Explore</p>
+                        <div className="flex items-center justify-between">
+                            <p className="text-sm text-white">View Work</p>
+                            <span className="text-white text-lg group-hover:translate-x-1 transition-transform">→</span>
+                        </div>
+                    </a>
+                </motion.div>
+
+                {/* Scroll Indicator */}
+                <motion.div
+                    className="mt-24 flex items-center gap-4"
+                    initial={{ opacity: 0 }}
+                    animate={{ opacity: 1 }}
+                    transition={{ duration: 0.5, delay: 1.2 }}
+                >
+                    <div className="w-px h-12 bg-[#E5E5E5]" />
+                    <p className="text-[10px] tracking-[0.2em] uppercase text-[#A0A0A0]">Scroll to explore</p>
+                </motion.div>
+            </div>
+        </section>
     )
 }
 
