@@ -1,15 +1,19 @@
 import { useState } from 'react'
-import { Intro, About, Skills, Project } from '.'
-import BackgroundWrapper from './components/BackgroundWrapper'
+import { Intro, About, Skills, Project, Contact } from '.'
+import Navbar from './components/Navbar'
 
 function App() {
   return (
-    <BackgroundWrapper>
-      <Intro />
-      <About />
-      <Skills />
-      <Project />
-    </BackgroundWrapper>
+    <div className="min-h-screen bg-white bg-grid grain-overlay">
+      <Navbar />
+      <main>
+        <Intro />
+        <About />
+        <Skills />
+        <Project />
+        <Contact />
+      </main>
+    </div>
   )
 }
 
