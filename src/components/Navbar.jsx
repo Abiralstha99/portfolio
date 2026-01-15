@@ -2,138 +2,97 @@ import React, { useState, useEffect } from 'react'
 import Hamburger from 'hamburger-react'
 
 function Navbar() {
-    const [hovered, setHovered] = useState(null)
     const [isOpen, setOpen] = useState(false)
+    const [scrolled, setScrolled] = useState(false)
 
-    // Prevent background scrolling when menu is open
+    useEffect(() => {
+        const handleScroll = () => {
+            setScrolled(window.scrollY > 50)
+        }
+        window.addEventListener('scroll', handleScroll)
+        return () => window.removeEventListener('scroll', handleScroll)
+    }, [])
+
     useEffect(() => {
         if (isOpen) {
             document.body.style.overflow = 'hidden'
         } else {
             document.body.style.overflow = 'unset'
         }
-
-        // Cleanup function to reset overflow when component unmounts
         return () => {
             document.body.style.overflow = 'unset'
         }
     }, [isOpen])
 
+    const navLinks = [
+        { href: '#about', label: 'About' },
+        { href: '#work', label: 'Work' },
+        { href: '#contact', label: 'Contact' },
+    ]
+
     return (
         <>
-            <nav className='w-full z-50 bg-[#1a1a1a]'>
-                {/* Top bar */}
-                <div className="flex items-center justify-center px-8 py-6">
+            <nav className={`fixed top-0 left-0 right-0 z-50 transition-all duration-500 ${scrolled ? 'bg-white/80 backdrop-blur-md border-b border-[#E5E5E5]' : 'bg-transparent'
+                }`}>
+                <div className="max-w-7xl mx-auto px-6 md:px-12 lg:px-16">
+                    <div className="flex items-center justify-between h-16 md:h-20">
+                        {/* Logo - Serif */}
+                        <a
+                            href="#"
+                            className="font-['Instrument_Serif'] text-lg text-[#1A1A1A] italic hover:opacity-60 transition-opacity"
+                        >
+                            Abiral
+                        </a>
 
-                    {/* Desktop links - visible on md and up */}
-                    <ul className="hidden md:flex space-x-12 text-lg font-['Merriweather',serif] leading-[1.2]">
-                        <li>
-                            <a
-                                href="#about"
-                                className="text-white hover:text-[#2E8B57] transition-colors duration-300 relative pb-1"
-                                onMouseEnter={() => setHovered('about')}
-                                onMouseLeave={() => setHovered(null)}
-                            >
-                                About
-                                <span
-                                    className={`absolute bottom-0 left-0 h-0.5 bg-[#66b28c] transition-all duration-300 ${hovered === 'about' ? 'w-full' : 'w-0'}`}
-                                ></span>
-                            </a>
-                        </li>
-                        <li>
-                            <a
-                                href="#skills"
-                                className="text-white hover:text-[#2E8B57] transition-colors duration-300 relative pb-1"
-                                onMouseEnter={() => setHovered('skills')}
-                                onMouseLeave={() => setHovered(null)}
-                            >
-                                Skills
-                                <span
-                                    className={`absolute bottom-0 left-0 h-0.5 bg-[#66b28c] transition-all duration-300 ${hovered === 'skills' ? 'w-full' : 'w-0'}`}
-                                ></span>
-                            </a>
-                        </li>
-                        <li>
-                            <a
-                                href="#project"
-                                className="text-white hover:text-[#2E8B57] transition-colors duration-300 relative pb-1"
-                                onMouseEnter={() => setHovered('project')}
-                                onMouseLeave={() => setHovered(null)}
-                            >
-                                Project
-                                <span
-                                    className={`absolute bottom-0 left-0 h-0.5 bg-[#66b28c] transition-all duration-300 ${hovered === 'project' ? 'w-full' : 'w-0'}`}
-                                ></span>
-                            </a>
-                        </li>
-                        <li>
-                            <a
-                                href="#contact"
-                                className="text-white hover:text-[#2E8B57] transition-colors duration-300 relative pb-1"
-                                onMouseEnter={() => setHovered('contact')}
-                                onMouseLeave={() => setHovered(null)}
-                            >
-                                Contact
-                                <span
-                                    className={`absolute bottom-0 left-0 h-0.5 bg-[#66b28c] transition-all duration-300 ${hovered === 'contact' ? 'w-full' : 'w-0'}`}
-                                ></span>
-                            </a>
-                        </li>
-                    </ul>
+                        {/* Desktop Navigation */}
+                        <ul className="hidden md:flex items-center gap-10">
+                            {navLinks.map((link) => (
+                                <li key={link.href}>
+                                    <a
+                                        href={link.href}
+                                        className="text-xs tracking-[0.15em] uppercase text-[#6B6B6B] hover:text-[#1A1A1A] transition-colors duration-300"
+                                    >
+                                        {link.label}
+                                    </a>
+                                </li>
+                            ))}
+                        </ul>
 
-                    {/* Mobile hamburger - hidden on desktop, visible on mobile */}
-                    <div className="md:hidden absolute right-8">
-                        <Hamburger toggled={isOpen} toggle={setOpen} color="white" size={24} rounded />
+                        {/* Mobile Hamburger */}
+                        <div className="md:hidden">
+                            <Hamburger
+                                toggled={isOpen}
+                                toggle={setOpen}
+                                color="#1A1A1A"
+                                size={18}
+                                rounded
+                            />
+                        </div>
                     </div>
                 </div>
             </nav>
 
-            {/* Full-screen mobile menu overlay with smooth transitions */}
-            <div className={`md:hidden fixed inset-0 z-40 transition-all duration-500 ease-in-out ${isOpen ? 'opacity-100 visible' : 'opacity-0 invisible'} bg-[#1a1a1a]`}>
-
-                {/* Centered menu content */}
-                <div className="flex items-center justify-center h-full">
-                    <ul className="flex flex-col space-y-8 text-center font-['Merriweather',serif] leading-[1.2]">
-                        <li>
-                            <a
-                                href="#about"
-                                className="text-white text-4xl font-light hover:text-[#66b28c] transition-colors relative pb-2 block"
-                                onClick={() => setOpen(false)}
-                            >
-                                ABOUT
-                                <div className="w-full h-px bg-gray-400 mt-2 opacity-30"></div>
-                            </a>
-                        </li>
-                        <li>
-                            <a
-                                href="#skills"
-                                className="text-white text-4xl font-light hover:text-[#66b28c] transition-colors relative pb-2 block"
-                                onClick={() => setOpen(false)}
-                            >
-                                SKILLS
-                                <div className="w-full h-px bg-gray-400 mt-2 opacity-30"></div>
-                            </a>
-                        </li>
-                        <li>
-                            <a
-                                href="#project"
-                                className="text-white text-4xl font-light hover:text-[#66b28c] transition-colors relative pb-2 block"
-                                onClick={() => setOpen(false)}
-                            >
-                                PROJECT
-                                <div className="w-full h-px bg-gray-400 mt-2 opacity-30"></div>
-                            </a>
-                        </li>
-                        <li>
-                            <a
-                                href="#contact"
-                                className="text-white text-4xl font-light hover:text-[#66b28c] transition-colors relative pb-2 block"
-                                onClick={() => setOpen(false)}
-                            >
-                                CONTACT
-                                <div className="w-full h-px bg-gray-400 mt-2 opacity-30"></div>
-                            </a>
-                        </li>
+            {/* Mobile Menu Overlay */}
+            <div className={`md:hidden fixed inset-0 z-40 transition-all duration-500 ${isOpen ? 'opacity-100 visible' : 'opacity-0 invisible pointer-events-none'
+                } bg-white`}>
+                <div className="flex flex-col items-center justify-center h-full">
+                    <ul className="flex flex-col items-center gap-10">
+                        {navLinks.map((link, index) => (
+                            <li key={link.href}>
+                                <a
+                                    href={link.href}
+                                    className="font-['Instrument_Serif'] text-4xl text-[#1A1A1A] hover:opacity-50 transition-opacity"
+                                    onClick={() => setOpen(false)}
+                                    style={{
+                                        opacity: isOpen ? 1 : 0,
+                                        transform: isOpen ? 'translateY(0)' : 'translateY(20px)',
+                                        transition: `all 0.4s cubic-bezier(0.4, 0, 0.2, 1) ${index * 0.1}s`
+                                    }}
+                                >
+                                    {link.label}
+                                </a>
+                            </li>
+                        ))}
                     </ul>
                 </div>
             </div>
