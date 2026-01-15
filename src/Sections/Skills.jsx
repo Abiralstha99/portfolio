@@ -1,113 +1,89 @@
 import React from 'react'
 import { motion } from 'framer-motion'
 import skillsData from '../data/skills.json'
-import {
-    Language,
-    Palette,
-    Code,
-    Storage,
-    Air,
-    Cake,
-    Brush,
-    SettingsEthernet,
-    FlashOn,
-    Build,
-    GitHub,
-    PostAdd,
-    IntegrationInstructions,
-    DataObject,
-    AccountTree,
-    Cloud,
-    Timeline
-} from '@mui/icons-material'
 
 function Skills() {
-    const groupVariants = {
+    const containerVariants = {
         hidden: { opacity: 0 },
-        visible: (i = 0) => ({
+        visible: {
             opacity: 1,
-            transition: { delay: i * 0.55 }
-        })
-    }
-
-    const categoryTitle = {
-        hidden: { opacity: 0, y: 30 },
-        visible: { opacity: 1, y: 0 }
-    }
-
-    const skillsListVariants = {
-        hidden: { opacity: 0 },
-        visible: { opacity: 1 }
+            transition: { staggerChildren: 0.1 }
+        }
     }
 
     const itemVariants = {
-        hidden: { opacity: 0, y: 12 },
-        visible: { opacity: 1, y: 0, transition: { duration: 0.45 } }
+        hidden: { opacity: 0, y: 20 },
+        visible: { opacity: 1, y: 0, transition: { duration: 0.5 } }
     }
 
     return (
-        <section id="skills" className="min-h-screen py-20">
-            <div className="max-w-7xl mx-auto w-full px-4 sm:px-8 lg:px-16 pl-20 md:pl-24 lg:pl-32">
-                {/* Small heading */}
-                <div className="mb-8">
-                    <span className="text-[#f4a261] tracking-widest text-sm flex items-center gap-2">
-                        <span className="text-xl">*</span> MY STACK
-                    </span>
-                </div>
+        <section id="skills" className="py-32 px-6 md:px-12 lg:px-16 bg-[#F5F5F7]">
+            <div className="max-w-7xl mx-auto">
+                {/* Section Label */}
+                <motion.p
+                    className="text-[10px] tracking-[0.25em] uppercase text-[#A0A0A0] mb-6"
+                    initial={{ opacity: 0, y: 20 }}
+                    whileInView={{ opacity: 1, y: 0 }}
+                    viewport={{ once: true }}
+                    transition={{ duration: 0.5 }}
+                >
+                    Capabilities
+                </motion.p>
 
-                {/* Groups */}
-                <div className="flex flex-col gap-16">
+                <motion.h2
+                    className="font-['Instrument_Serif'] text-4xl md:text-5xl text-[#1A1A1A] mb-16"
+                    initial={{ opacity: 0, y: 20 }}
+                    whileInView={{ opacity: 1, y: 0 }}
+                    viewport={{ once: true }}
+                    transition={{ duration: 0.5, delay: 0.1 }}
+                >
+                    Tools & <span className="italic">Technologies</span>
+                </motion.h2>
+
+                {/* Skills Grid */}
+                <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-8">
                     {skillsData.map((group, idx) => (
-                        <div
+                        <motion.div
                             key={group.category}
-                            className="grid grid-cols-1 lg:grid-cols-2 items-start gap-10"
+                            className="bento-card bg-white p-8 rounded-xl"
+                            initial="hidden"
+                            whileInView="visible"
+                            viewport={{ once: true, amount: 0.3 }}
+                            variants={containerVariants}
                         >
-                            {/* Left: big category title */}
-                            <motion.h3
-                                initial="hidden"
-                                whileInView="visible"
-                                viewport={{ once: false, amount: 0.35 }}
-                                variants={categoryTitle}
-                                transition={{ duration: 0.6, delay: idx * 0.55 }}
-                                className="text-[56px] leading-none md:text-[88px] lg:text-[110px] text-gray-300 font-['Bebas_Neue',sans-serif] tracking-wider"
+                            {/* Category Title */}
+                            <motion.p
+                                className="text-[10px] tracking-[0.2em] uppercase text-[#A0A0A0] mb-6 pb-4 border-b border-[#E5E5E5]"
+                                variants={itemVariants}
                             >
-                                {group.category.toUpperCase()}
-                            </motion.h3>
+                                {group.category}
+                            </motion.p>
 
-                            {/* Right: skills list */}
+                            {/* Skills List */}
                             <motion.div
-                                initial="hidden"
-                                whileInView="visible"
-                                viewport={{ once: false, amount: 0.35 }}
-                                variants={skillsListVariants}
-                                transition={{ delay: idx * 0.55 + 0.6, staggerChildren: 0.12 }}
-                                className="flex flex-wrap items-center gap-x-16 gap-y-8"
+                                className="space-y-3"
+                                variants={containerVariants}
                             >
                                 {group.skills.map((skill) => (
                                     <motion.div
                                         key={skill.name}
                                         variants={itemVariants}
-                                        className="flex items-center gap-4"
+                                        className="flex items-center gap-3 group"
                                     >
-                                        <div className="w-10 h-10 flex items-center justify-center">
-                                            {skill.name === "GitHub" ? (
-                                                <GitHub className="text-white w-8 h-8" />
-                                            ) : (
-                                                <img
-                                                    src={skill.logo}
-                                                    alt={skill.name}
-                                                    className="w-8 h-8 object-contain"
-                                                />
-                                            )}
-                                        </div>
-                                        <span className="text-white text-2xl md:text-3xl font-['Merriweather',serif]">
+                                        {skill.logo && (
+                                            <img
+                                                src={skill.logo}
+                                                alt={skill.name}
+                                                className="w-5 h-5 object-contain opacity-60 group-hover:opacity-100 transition-opacity"
+                                            />
+                                        )}
+                                        <span className="text-sm text-[#1A1A1A]">
                                             {skill.name}
                                         </span>
                                     </motion.div>
                                 ))}
-
                             </motion.div>
-                        </div>
+                        </motion.div>
                     ))}
                 </div>
             </div>
