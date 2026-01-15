@@ -3,54 +3,49 @@ import { motion } from 'framer-motion'
 
 function ProjectCard({ project, index }) {
     return (
-        <motion.div
-            className="grid grid-cols-1 lg:grid-cols-2 gap-8 lg:gap-12 items-center"
-            initial={{ opacity: 0, y: 50 }}
+        <motion.article
+            className="group"
+            initial={{ opacity: 0, y: 30 }}
             whileInView={{ opacity: 1, y: 0 }}
-            viewport={{ once: false, amount: 0.3 }}
-            transition={{ type: 'spring', stiffness: 90, damping: 18, delay: index * 0.1 }}
+            viewport={{ once: true, amount: 0.3 }}
+            transition={{ duration: 0.5, delay: index * 0.1 }}
         >
-            {/* Image Side */}
-            <div className="relative">
-                <div className="bg-white rounded-xl overflow-hidden shadow-lg">
-                    {project.image &&
-                        <img
-                            src={project.image}
-                            alt={`${project.title} preview`}
-                            className="w-full h-64 lg:h-80 object-cover"
-                        />
-                }
-                </div>
-            </div>
+            {/* Image */}
+            <a
+                href={project.githubLink || project.demoLink}
+                target="_blank"
+                rel="noopener noreferrer"
+                className="block aspect-[16/10] overflow-hidden rounded-lg bg-[#141414] mb-5"
+            >
+                {project.image && (
+                    <img
+                        src={project.image}
+                        alt={`${project.title} preview`}
+                        className="w-full h-full object-cover transition-transform duration-500 group-hover:scale-105"
+                    />
+                )}
+            </a>
 
-            {/* Details Side */}
-            <div className="space-y-6">
-                <h2 className="text-4xl lg:text-5xl font-bold text-white">
+            {/* Content */}
+            <div className="space-y-3">
+                <h3 className="text-xl font-semibold text-[#fafafa] group-hover:text-[#3b82f6] transition-colors">
                     {project.title}
-                </h2>
+                </h3>
 
-                <div className="space-y-4">
-                    <div className="text-gray-400 text-sm font-medium tracking-wider">
-                        PROJECT INFO
-                    </div>
-
-
-                </div>
-                <p className="text-gray-300 text-lg leading-relaxed">
+                <p className="text-sm text-[#a1a1a1] leading-relaxed line-clamp-2">
                     {project.description}
                 </p>
 
-
-
-                <div className="flex flex-col gap-3 pt-4">
+                {/* Links */}
+                <div className="flex items-center gap-4 pt-2">
                     {project.demoLink && (
                         <a
                             href={project.demoLink}
                             target="_blank"
                             rel="noopener noreferrer"
-                            className="text-[#2E8B57] text-lg font-medium flex items-center gap-2 hover:text-green-400 transition-colors"
+                            className="text-sm text-[#6b6b6b] hover:text-[#fafafa] transition-colors"
                         >
-                            Live Demo ↗
+                            Live Demo →
                         </a>
                     )}
                     {project.githubLink && (
@@ -58,14 +53,14 @@ function ProjectCard({ project, index }) {
                             href={project.githubLink}
                             target="_blank"
                             rel="noopener noreferrer"
-                            className="text-[#2E8B57] text-lg font-medium flex items-center gap-2 hover:text-green-400 transition-colors"
+                            className="text-sm text-[#6b6b6b] hover:text-[#fafafa] transition-colors"
                         >
-                            See on GitHub ↗
+                            GitHub →
                         </a>
                     )}
                 </div>
             </div>
-        </motion.div>
+        </motion.article>
     )
 }
 
