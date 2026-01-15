@@ -9,7 +9,7 @@
     "title": "CV builder",
     "description": "A responsive web application built with React that allows users to create resumes through form. I built it to learn about fundamentals of react, including components, props, hooks and dynamic form handling",
     "image": "/images/project2.png",
-    "githubLink": "https://example.com/project2"
+    "githubLink": "https://github.com/Abiralstha99/CV-Builder"
   },
   {
     "title": "Hennest",
@@ -18,9 +18,9 @@
     "githubLink": "https://github.com/Abiralstha99/HenNest"
   },
   {
-    "title": "Birds of a Feather",
-    "description": "Birds of a Feather is a solitaire puzzle game built in Java and JavaFX. Players arrange cards on a grid and merge stacks by matching suits or ranks (including adjacent ranks), aiming to combine all cards into one stack.",
-    "image": "/images/project4.png",
-    "githubLink": "https://example.com/project4"
+    "title": "Huffman Coding",
+    "description": "Implementation of Huffman Coding for text compression",
+    "image": "/src/assets/projects/huffman.png",
+    "githubLink": "https://github.com/Abiralstha99/HuffmanCoding"
   }
 ]
