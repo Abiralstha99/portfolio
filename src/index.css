@@ -1,31 +1,28 @@
-/* Import Fonts - Instrument Serif for headers, Inter for body */
-@import url("https://fonts.googleapis.com/css2?family=Instrument+Serif:ital@0;1&family=Inter:wght@400;500;600&display=swap");
+/* ═══════════════════════════════════════════════════════════════
+   STONE & CONCRETE — Brutalist Minimalist Design System
+   High-fashion, industrial, architectural aesthetic
+═══════════════════════════════════════════════════════════════ */
 
 @import "tailwindcss";
-
-/* ═══════════════════════════════════════════════════════════════
-   ARCHITECTURAL VELLUM - Design System
-   A gallery-minimalist aesthetic with white theme
-═══════════════════════════════════════════════════════════════ */
 
 :root {
   color-scheme: light;
 
-  /* Color Palette - Strictly Limited */
-  --color-white: #ffffff;
-  --color-paper: #f5f5f7;
-  --color-charcoal: #1a1a1a;
-  --color-gray-medium: #6b6b6b;
-  --color-gray-light: #a0a0a0;
-  --color-stroke: #e5e5e5;
-  --color-stroke-hover: #d0d0d0;
+  /* ─── Brutalist Color Palette (Tonal Greys) ─── */
+  --color-background: #e6e6e6; /* Warm grey background */
+  --color-pebble: #d9d9d9; /* Card/module grey */
+  --color-white: #ffffff; /* Stark white cards */
+  --color-black: #000000; /* Pure black headers */
+  --color-graphite: #333333; /* Dark graphite body text */
+  --color-stone: #666666; /* Muted stone for labels */
+  --color-border: #000000; /* Thick black borders */
 
-  /* Typography */
-  --font-serif: "Instrument Serif", Georgia, "Times New Roman", serif;
-  --font-sans: "Inter", -apple-system, BlinkMacSystemFont, "Segoe UI",
-    sans-serif;
+  /* ─── Typography ─── */
+  --font-display: "Archivo Black", "Impact", sans-serif;
+  --font-body: "Inter", -apple-system, BlinkMacSystemFont, sans-serif;
+  --font-mono: "IBM Plex Mono", "Consolas", monospace;
 
-  /* Spacing Scale (8px base) */
+  /* ─── Spacing Scale ─── */
   --space-1: 4px;
   --space-2: 8px;
   --space-3: 12px;
@@ -36,7 +33,15 @@
   --space-10: 64px;
   --space-12: 96px;
   --space-16: 128px;
+
+  /* ─── Hard Shadow (Brutalist) ─── */
+  --shadow-hard: 4px 4px 0px var(--color-black);
+  --shadow-hard-hover: 6px 6px 0px var(--color-black);
 }
+
+/* ═══════════════════════════════════════════════════════════════
+   BASE STYLES
+═══════════════════════════════════════════════════════════════ */
 
 html,
 body,
@@ -44,35 +49,27 @@ body,
   height: 100%;
 }
 
-body {
-  margin: 0;
-  padding: 0;
-  background-color: var(--color-white);
-  font-family: var(--font-sans);
-  font-size: 14px;
-  line-height: 1.7;
-  color: var(--color-charcoal);
-  -webkit-font-smoothing: antialiased;
-  -moz-osx-font-smoothing: grayscale;
-}
-
-/* Smooth scrolling */
 html {
   scroll-behavior: smooth;
 }
 
-/* ═══════════════════════════════════════════════════════════════
-   BACKGROUND TEXTURES
-═══════════════════════════════════════════════════════════════ */
-
-/* Graph paper grid pattern */
-.bg-grid {
-  background-image: linear-gradient(rgba(0, 0, 0, 0.03) 1px, transparent 1px),
-    linear-gradient(90deg, rgba(0, 0, 0, 0.03) 1px, transparent 1px);
-  background-size: 40px 40px;
+body {
+  margin: 0;
+  padding: 0;
+  background-color: var(--color-background);
+  font-family: var(--font-body);
+  font-size: 15px;
+  line-height: 1.6;
+  color: var(--color-graphite);
+  -webkit-font-smoothing: antialiased;
+  -moz-osx-font-smoothing: grayscale;
 }
 
-/* Grain texture overlay */
+/* ═══════════════════════════════════════════════════════════════
+   CONCRETE GRAIN TEXTURE OVERLAY
+   Adds physical material feel to the grey background
+═══════════════════════════════════════════════════════════════ */
+
 .grain-overlay::before {
   content: "";
   position: fixed;
@@ -81,27 +78,129 @@ html {
   width: 100%;
   height: 100%;
   pointer-events: none;
-  z-index: 1000;
-  opacity: 0.02;
-  background-image: url("data:image/svg+xml,%3Csvg viewBox='0 0 200 200' xmlns='http://www.w3.org/2000/svg'%3E%3Cfilter id='noiseFilter'%3E%3CfeTurbulence type='fractalNoise' baseFrequency='0.85' numOctaves='4' stitchTiles='stitch'/%3E%3C/filter%3E%3Crect width='100%25' height='100%25' filter='url(%23noiseFilter)'/%3E%3C/svg%3E");
+  z-index: 9999;
+  opacity: 0.025;
+  background-image: url("data:image/svg+xml,%3Csvg viewBox='0 0 400 400' xmlns='http://www.w3.org/2000/svg'%3E%3Cfilter id='noiseFilter'%3E%3CfeTurbulence type='fractalNoise' baseFrequency='0.9' numOctaves='4' stitchTiles='stitch'/%3E%3C/filter%3E%3Crect width='100%25' height='100%25' filter='url(%23noiseFilter)'/%3E%3C/svg%3E");
 }
 
 /* ═══════════════════════════════════════════════════════════════
-   MINIMAL SCROLLBAR
+   TYPOGRAPHY SYSTEM
 ═══════════════════════════════════════════════════════════════ */
 
-::-webkit-scrollbar {
-  width: 4px;
+/* Display Headers - Archivo Black */
+.font-display {
+  font-family: var(--font-display);
+  font-weight: 400; /* Archivo Black is already bold */
+  text-transform: uppercase;
+  letter-spacing: -0.02em;
 }
-::-webkit-scrollbar-track {
+
+/* Monospace Labels */
+.font-mono {
+  font-family: var(--font-mono);
+  font-weight: 500;
+  text-transform: uppercase;
+  letter-spacing: 0.1em;
+}
+
+/* ═══════════════════════════════════════════════════════════════
+   BRUTALIST CARD SYSTEM
+═══════════════════════════════════════════════════════════════ */
+
+.brutalist-card {
+  background: var(--color-pebble);
+  border: 1px solid var(--color-black);
+  transition: transform 0.15s ease-out, box-shadow 0.15s ease-out;
+}
+
+.brutalist-card:hover {
+  transform: translate(-2px, -2px);
+  box-shadow: var(--shadow-hard);
+}
+
+.brutalist-card-white {
   background: var(--color-white);
+  border: 1px solid var(--color-black);
+  transition: transform 0.15s ease-out, box-shadow 0.15s ease-out;
 }
-::-webkit-scrollbar-thumb {
-  background: var(--color-stroke);
-  border-radius: 2px;
+
+.brutalist-card-white:hover {
+  transform: translate(-2px, -2px);
+  box-shadow: var(--shadow-hard);
 }
-::-webkit-scrollbar-thumb:hover {
-  background: var(--color-gray-light);
+
+/* Tonal cards - no border, uses background shift */
+.tonal-card {
+  background: var(--color-pebble);
+  transition: transform 0.15s ease-out, box-shadow 0.15s ease-out;
+}
+
+.tonal-card:hover {
+  transform: translate(-2px, -2px);
+  box-shadow: var(--shadow-hard);
+}
+
+/* Dark inverted card */
+.brutalist-card-dark {
+  background: var(--color-black);
+  color: var(--color-white);
+  border: 1px solid var(--color-black);
+  transition: transform 0.15s ease-out, box-shadow 0.15s ease-out;
+}
+
+.brutalist-card-dark:hover {
+  transform: translate(-2px, -2px);
+  box-shadow: 4px 4px 0px var(--color-graphite);
+}
+
+/* ═══════════════════════════════════════════════════════════════
+   BRUTALIST BUTTONS
+═══════════════════════════════════════════════════════════════ */
+
+.brutalist-btn {
+  display: inline-flex;
+  align-items: center;
+  gap: 8px;
+  padding: 12px 24px;
+  background: var(--color-black);
+  color: var(--color-white);
+  font-family: var(--font-mono);
+  font-size: 11px;
+  font-weight: 500;
+  text-transform: uppercase;
+  letter-spacing: 0.15em;
+  border: none;
+  cursor: pointer;
+  transition: transform 0.15s ease-out, box-shadow 0.15s ease-out;
+}
+
+.brutalist-btn:hover {
+  transform: translate(-2px, -2px);
+  box-shadow: var(--shadow-hard);
+}
+
+.brutalist-btn-outline {
+  display: inline-flex;
+  align-items: center;
+  gap: 8px;
+  padding: 12px 24px;
+  background: transparent;
+  color: var(--color-black);
+  font-family: var(--font-mono);
+  font-size: 11px;
+  font-weight: 500;
+  text-transform: uppercase;
+  letter-spacing: 0.15em;
+  border: 1px solid var(--color-black);
+  cursor: pointer;
+  transition: all 0.15s ease-out;
+}
+
+.brutalist-btn-outline:hover {
+  background: var(--color-black);
+  color: var(--color-white);
+  transform: translate(-2px, -2px);
+  box-shadow: var(--shadow-hard);
 }
 
 /* ═══════════════════════════════════════════════════════════════
@@ -109,48 +208,77 @@ html {
 ═══════════════════════════════════════════════════════════════ */
 
 ::selection {
-  background: var(--color-charcoal);
+  background: var(--color-black);
   color: var(--color-white);
 }
 
 a:focus-visible,
 button:focus-visible {
-  outline: 1px solid var(--color-charcoal);
-  outline-offset: 4px;
+  outline: 2px solid var(--color-black);
+  outline-offset: 2px;
 }
 
 /* ═══════════════════════════════════════════════════════════════
-   BASE TYPOGRAPHY
+   LINKS
 ═══════════════════════════════════════════════════════════════ */
 
 a {
   color: inherit;
   text-decoration: none;
-  transition: all 0.3s cubic-bezier(0.4, 0, 0.2, 1);
-}
-
-/* Serif headings */
-.font-serif {
-  font-family: var(--font-serif);
-}
-
-/* Wide letter-spacing for labels */
-.tracking-label {
-  letter-spacing: 0.15em;
+  transition: all 0.15s ease-out;
 }
 
 /* ═══════════════════════════════════════════════════════════════
-   BENTO CARD SYSTEM
+   MINIMAL SCROLLBAR (Industrial)
 ═══════════════════════════════════════════════════════════════ */
 
-.bento-card {
-  background: var(--color-paper);
-  border: 1px solid transparent;
-  transition: all 0.4s cubic-bezier(0.4, 0, 0.2, 1);
+::-webkit-scrollbar {
+  width: 8px;
 }
 
-.bento-card:hover {
-  border-color: var(--color-stroke);
+::-webkit-scrollbar-track {
+  background: var(--color-background);
+}
+
+::-webkit-scrollbar-thumb {
+  background: var(--color-black);
+}
+
+::-webkit-scrollbar-thumb:hover {
+  background: var(--color-graphite);
+}
+
+/* ═══════════════════════════════════════════════════════════════
+   UTILITY CLASSES
+═══════════════════════════════════════════════════════════════ */
+
+.text-display {
+  color: var(--color-black);
+  font-family: var(--font-display);
+}
+
+.text-body {
+  color: var(--color-graphite);
+}
+
+.text-label {
+  color: var(--color-stone);
+  font-family: var(--font-mono);
+  font-size: 10px;
+  text-transform: uppercase;
+  letter-spacing: 0.15em;
+}
+
+.bg-pebble {
+  background-color: var(--color-pebble);
+}
+
+.bg-stone {
+  background-color: var(--color-background);
+}
+
+.border-brutal {
+  border: 1px solid var(--color-black);
 }
 
 /* ═══════════════════════════════════════════════════════════════
@@ -159,27 +287,23 @@ a {
 
 @media (max-width: 768px) {
   body {
-    font-size: 13px;
+    font-size: 14px;
+  }
+
+  .brutalist-card:hover,
+  .brutalist-card-white:hover,
+  .tonal-card:hover {
+    transform: none;
+    box-shadow: none;
   }
 }
 
-/* Utility classes */
-.text-primary {
-  color: var(--color-text-primary);
-}
+/* ═══════════════════════════════════════════════════════════════
+   DIVIDER
+═══════════════════════════════════════════════════════════════ */
 
-.text-secondary {
-  color: var(--color-text-secondary);
-}
-
-.text-muted {
-  color: var(--color-text-muted);
-}
-
-.text-accent {
-  color: var(--color-accent);
-}
-
-.bg-surface {
-  background-color: var(--color-surface);
+.brutalist-divider {
+  height: 1px;
+  background: var(--color-black);
+  width: 100%;
 }
