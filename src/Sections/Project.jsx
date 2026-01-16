@@ -16,41 +16,60 @@ function Project() {
     visible: {
       opacity: 1,
       y: 0,
-      transition: { duration: 0.6, ease: [0.4, 0, 0.2, 1] }
+      transition: { duration: 0.5, ease: [0.4, 0, 0.2, 1] }
     }
   }
 
-  // Bento grid sizes for variety
+  // Brutalist Bento grid patterns - varied sizes for visual interest
   const gridPatterns = [
     'lg:col-span-7 lg:row-span-2',  // Large featured
     'lg:col-span-5',                 // Medium
-    'lg:col-span-5',                 // Medium
-    'lg:col-span-6',                 // Half
-    'lg:col-span-6',                 // Half
+    'lg:col-span-5',                 // Medium  
+    'lg:col-span-7',                 // Wide
+  ]
+
+  // Alternating card styles for 'stacked material' look
+  const cardStyles = [
+    'brutalist-card-white',
+    'brutalist-card',
+    'brutalist-card-white',
+    'brutalist-card',
   ]
 
   return (
     <section id="work" className="py-32 px-6 md:px-12 lg:px-16">
       <div className="max-w-7xl mx-auto">
-        {/* Section Header */}
+        {/* Section Header - Brutalist */}
         <motion.div
-          className="mb-16"
+          className="mb-16 flex flex-col md:flex-row md:items-end md:justify-between gap-6"
           initial={{ opacity: 0, y: 20 }}
           whileInView={{ opacity: 1, y: 0 }}
           viewport={{ once: true }}
-          transition={{ duration: 0.6 }}
+          transition={{ duration: 0.5 }}
         >
-          <p className="text-[10px] tracking-[0.25em] uppercase text-[#A0A0A0] mb-6">
-            Selected Work
-          </p>
-          <h2 className="font-['Instrument_Serif'] text-4xl md:text-5xl lg:text-6xl text-[#1A1A1A] leading-[1.05]">
-            Featured <span className="italic">Projects</span>
-          </h2>
+          <div>
+            <p className="font-['IBM_Plex_Mono'] text-[9px] tracking-[0.3em] uppercase text-[#666666] mb-4">
+              Selected Work
+            </p>
+            <h2 className="font-['Archivo_Black'] text-4xl md:text-5xl lg:text-6xl text-black leading-[0.95] uppercase">
+              Featured
+              <br />
+              Projects
+            </h2>
+          </div>
+
+          {/* Project count indicator */}
+          <div className="flex items-center gap-4">
+            <div className="w-12 h-px bg-black" />
+            <span className="font-['IBM_Plex_Mono'] text-[10px] tracking-[0.2em] uppercase text-[#666666]">
+              {projects.length} Projects
+            </span>
+          </div>
         </motion.div>
 
-        {/* Bento Grid */}
+        {/* Brutalist Bento Grid */}
         <motion.div
-          className="grid grid-cols-1 lg:grid-cols-12 gap-6"
+          className="grid grid-cols-1 lg:grid-cols-12 gap-4"
           initial="hidden"
           whileInView="visible"
           viewport={{ once: true, amount: 0.1 }}
@@ -59,7 +78,7 @@ function Project() {
           {projects.map((project, index) => (
             <motion.article
               key={index}
-              className={`group bento-card bg-[#F5F5F7] rounded-xl overflow-hidden ${gridPatterns[index] || 'lg:col-span-6'}`}
+              className={`group ${cardStyles[index % cardStyles.length]} overflow-hidden ${gridPatterns[index] || 'lg:col-span-6'}`}
               variants={itemVariants}
             >
               <a
@@ -68,28 +87,36 @@ function Project() {
                 rel="noopener noreferrer"
                 className="block h-full"
               >
-                {/* Image Container */}
+                {/* Image Container - Sharp edges */}
                 <div className={`relative overflow-hidden ${index === 0 ? 'aspect-[16/10]' : 'aspect-[16/9]'}`}>
                   {project.image && (
                     <img
                       src={project.image}
                       alt={`${project.title} preview`}
-                      className="w-full h-full object-cover transition-transform duration-700 group-hover:scale-105"
+                      className="w-full h-full object-cover transition-transform duration-300 group-hover:scale-[1.02]"
                     />
                   )}
-                  {/* Hover Overlay */}
-                  <div className="absolute inset-0 bg-[#1A1A1A]/0 group-hover:bg-[#1A1A1A]/5 transition-colors duration-500" />
+                  {/* Hard overlay on hover */}
+                  <div className="absolute inset-0 bg-black/0 group-hover:bg-black/5 transition-colors duration-200" />
                 </div>
 
-                {/* Content */}
-                <div className="p-6 md:p-8">
+                {/* Content - Industrial typography */}
+                <div className="p-6 md:p-8 border-t border-black">
+                  {/* Category label */}
+                  <p className="font-['IBM_Plex_Mono'] text-[9px] tracking-[0.2em] uppercase text-[#666666] mb-3">
+                    Project {String(index + 1).padStart(2, '0')}
+                  </p>
+
                   <div className="flex items-start justify-between gap-4 mb-3">
-                    <h3 className="font-['Instrument_Serif'] text-2xl md:text-3xl text-[#1A1A1A] group-hover:opacity-70 transition-opacity">
+                    <h3 className="font-['Archivo_Black'] text-xl md:text-2xl text-black uppercase group-hover:opacity-70 transition-opacity duration-200">
                       {project.title}
                     </h3>
-                    <span className="text-[#6B6B6B] text-lg flex-shrink-0 group-hover:translate-x-1 group-hover:-translate-y-1 transition-transform">↗</span>
+                    <span className="text-black text-lg flex-shrink-0 group-hover:translate-x-1 group-hover:-translate-y-1 transition-transform duration-200">
+                      ↗
+                    </span>
                   </div>
-                  <p className="text-sm text-[#6B6B6B] leading-relaxed line-clamp-2">
+
+                  <p className="text-[14px] text-[#333333] leading-relaxed line-clamp-2">
                     {project.description}
                   </p>
                 </div>
@@ -98,9 +125,9 @@ function Project() {
           ))}
         </motion.div>
 
-        {/* View All Link */}
+        {/* View All Link - Brutalist button */}
         <motion.div
-          className="mt-16 text-center"
+          className="mt-16 flex justify-center"
           initial={{ opacity: 0 }}
           whileInView={{ opacity: 1 }}
           viewport={{ once: true }}
@@ -110,9 +137,9 @@ function Project() {
             href="https://github.com/Abiralstha99"
             target="_blank"
             rel="noopener noreferrer"
-            className="inline-flex items-center gap-3 text-xs tracking-[0.15em] uppercase text-[#6B6B6B] hover:text-[#1A1A1A] transition-colors"
+            className="brutalist-btn-outline"
           >
-            View all projects on GitHub
+            View All on GitHub
             <span>→</span>
           </a>
         </motion.div>
