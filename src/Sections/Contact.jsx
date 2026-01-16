@@ -14,13 +14,17 @@ function Contact() {
                         initial={{ opacity: 0, y: 30 }}
                         whileInView={{ opacity: 1, y: 0 }}
                         viewport={{ once: true }}
-                        transition={{ duration: 0.6 }}
+                        transition={{ duration: 0.5 }}
                     >
-                        <p className="text-[10px] tracking-[0.25em] uppercase text-[#A0A0A0] mb-6">
+                        <p className="font-['IBM_Plex_Mono'] text-[9px] tracking-[0.3em] uppercase text-[#666666] mb-6">
                             Get in Touch
                         </p>
-                        <h2 className="font-['Instrument_Serif'] text-4xl md:text-5xl lg:text-6xl text-[#1A1A1A] leading-[1.05]">
-                            Let's create something <span className="italic">beautiful</span> together.
+                        <h2 className="font-['Archivo_Black'] text-4xl md:text-5xl lg:text-6xl text-black leading-[0.95] uppercase">
+                            Let's Create
+                            <br />
+                            Something
+                            <br />
+                            Bold.
                         </h2>
                     </motion.div>
 
@@ -30,29 +34,30 @@ function Contact() {
                         initial={{ opacity: 0, y: 30 }}
                         whileInView={{ opacity: 1, y: 0 }}
                         viewport={{ once: true }}
-                        transition={{ duration: 0.6, delay: 0.2 }}
+                        transition={{ duration: 0.5, delay: 0.15 }}
                     >
-                        <p className="text-sm text-[#6B6B6B] leading-relaxed mb-8">
+                        <p className="text-[15px] text-[#333333] leading-relaxed mb-8">
                             I'm currently open to new opportunities, collaborations,
                             and interesting projects. Whether you have a question or
                             just want to say hello, I'd love to hear from you.
                         </p>
 
-                        {/* Email */}
+                        {/* Email - Brutalist Style */}
                         <a
                             href="mailto:your.email@example.com"
-                            className="font-['Instrument_Serif'] text-2xl md:text-3xl text-[#1A1A1A] hover:opacity-50 transition-opacity mb-8"
+                            className="brutalist-btn inline-flex w-fit mb-10"
                         >
                             your.email@example.com
+                            <span>↗</span>
                         </a>
 
-                        {/* Social Links */}
+                        {/* Social Links - Industrial */}
                         <div className="flex items-center gap-8">
                             <a
                                 href="https://github.com/Abiralstha99"
                                 target="_blank"
                                 rel="noopener noreferrer"
-                                className="text-xs tracking-[0.15em] uppercase text-[#A0A0A0] hover:text-[#1A1A1A] transition-colors"
+                                className="font-['IBM_Plex_Mono'] text-[10px] tracking-[0.2em] uppercase text-[#666666] hover:text-black transition-colors duration-200"
                             >
                                 GitHub
                             </a>
@@ -60,7 +65,7 @@ function Contact() {
                                 href="https://linkedin.com/in/yourprofile"
                                 target="_blank"
                                 rel="noopener noreferrer"
-                                className="text-xs tracking-[0.15em] uppercase text-[#A0A0A0] hover:text-[#1A1A1A] transition-colors"
+                                className="font-['IBM_Plex_Mono'] text-[10px] tracking-[0.2em] uppercase text-[#666666] hover:text-black transition-colors duration-200"
                             >
                                 LinkedIn
                             </a>
@@ -68,7 +73,7 @@ function Contact() {
                                 href="https://instagram.com/yourhandle"
                                 target="_blank"
                                 rel="noopener noreferrer"
-                                className="text-xs tracking-[0.15em] uppercase text-[#A0A0A0] hover:text-[#1A1A1A] transition-colors"
+                                className="font-['IBM_Plex_Mono'] text-[10px] tracking-[0.2em] uppercase text-[#666666] hover:text-black transition-colors duration-200"
                             >
                                 Instagram
                             </a>
@@ -76,19 +81,19 @@ function Contact() {
                     </motion.div>
                 </div>
 
-                {/* Footer */}
+                {/* Footer - Brutalist */}
                 <motion.div
-                    className="pt-8 border-t border-[#E5E5E5] flex flex-col md:flex-row justify-between items-center gap-4"
+                    className="pt-8 border-t border-black flex flex-col md:flex-row justify-between items-center gap-4"
                     initial={{ opacity: 0 }}
                     whileInView={{ opacity: 1 }}
                     viewport={{ once: true }}
-                    transition={{ duration: 0.5, delay: 0.3 }}
+                    transition={{ duration: 0.4, delay: 0.2 }}
                 >
-                    <p className="text-[10px] tracking-[0.15em] uppercase text-[#A0A0A0]">
+                    <p className="font-['IBM_Plex_Mono'] text-[9px] tracking-[0.2em] uppercase text-[#666666]">
                         © {currentYear} Abiral Shrestha
                     </p>
-                    <p className="text-[10px] tracking-[0.15em] uppercase text-[#A0A0A0]">
-                        Designed with intention
+                    <p className="font-['IBM_Plex_Mono'] text-[9px] tracking-[0.2em] uppercase text-[#666666]">
+                        Built with intention
                     </p>
                 </motion.div>
             </div>
