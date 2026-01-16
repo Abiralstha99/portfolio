@@ -4,35 +4,40 @@ import { motion } from 'framer-motion'
 function ProjectCard({ project, index }) {
     return (
         <motion.article
-            className="group"
+            className="group brutalist-card"
             initial={{ opacity: 0, y: 30 }}
             whileInView={{ opacity: 1, y: 0 }}
             viewport={{ once: true, amount: 0.3 }}
-            transition={{ duration: 0.5, delay: index * 0.1 }}
+            transition={{ duration: 0.4, delay: index * 0.1 }}
         >
             {/* Image */}
             <a
                 href={project.githubLink || project.demoLink}
                 target="_blank"
                 rel="noopener noreferrer"
-                className="block aspect-[16/10] overflow-hidden rounded-lg bg-[#141414] mb-5"
+                className="block aspect-[16/10] overflow-hidden bg-[#D9D9D9]"
             >
                 {project.image && (
                     <img
                         src={project.image}
                         alt={`${project.title} preview`}
-                        className="w-full h-full object-cover transition-transform duration-500 group-hover:scale-105"
+                        className="w-full h-full object-cover transition-transform duration-300 group-hover:scale-[1.02]"
                     />
                 )}
             </a>
 
             {/* Content */}
-            <div className="space-y-3">
-                <h3 className="text-xl font-semibold text-[#fafafa] group-hover:text-[#3b82f6] transition-colors">
+            <div className="p-6 border-t border-black space-y-3">
+                {/* Label */}
+                <p className="font-['IBM_Plex_Mono'] text-[9px] tracking-[0.2em] uppercase text-[#666666]">
+                    Project {String(index + 1).padStart(2, '0')}
+                </p>
+
+                <h3 className="font-['Archivo_Black'] text-xl text-black uppercase group-hover:opacity-70 transition-opacity duration-200">
                     {project.title}
                 </h3>
 
-                <p className="text-sm text-[#a1a1a1] leading-relaxed line-clamp-2">
+                <p className="text-[14px] text-[#333333] leading-relaxed line-clamp-2">
                     {project.description}
                 </p>
 
@@ -43,7 +48,7 @@ function ProjectCard({ project, index }) {
                             href={project.demoLink}
                             target="_blank"
                             rel="noopener noreferrer"
-                            className="text-sm text-[#6b6b6b] hover:text-[#fafafa] transition-colors"
+                            className="font-['IBM_Plex_Mono'] text-[10px] tracking-[0.15em] uppercase text-[#666666] hover:text-black transition-colors duration-200"
                         >
                             Live Demo →
                         </a>
@@ -53,7 +58,7 @@ function ProjectCard({ project, index }) {
                             href={project.githubLink}
                             target="_blank"
                             rel="noopener noreferrer"
-                            className="text-sm text-[#6b6b6b] hover:text-[#fafafa] transition-colors"
+                            className="font-['IBM_Plex_Mono'] text-[10px] tracking-[0.15em] uppercase text-[#666666] hover:text-black transition-colors duration-200"
                         >
                             GitHub →
                         </a>
