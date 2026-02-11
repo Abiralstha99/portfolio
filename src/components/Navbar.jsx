@@ -34,12 +34,12 @@ function Navbar() {
         <>
             <nav className={`fixed top-0 left-0 right-0 z-50 transition-all duration-200 ${scrolled ? 'bg-[#E6E6E6] border-b border-black' : 'bg-transparent'
                 }`}>
-                <div className="max-w-7xl mx-auto px-6 md:px-12 lg:px-16">
-                    <div className="flex items-center justify-between h-16 md:h-20">
+                <div className="max-w-7xl mx-auto px-4 sm:px-6 md:px-12 lg:px-16">
+                    <div className="flex items-center justify-between h-14 sm:h-16 md:h-20">
                         {/* Logo - Brutalist */}
                         <a
                             href="#"
-                            className="font-['Archivo_Black'] text-sm uppercase tracking-wide text-black hover:opacity-60 transition-opacity"
+                            className="font-['Archivo_Black'] text-xs sm:text-sm uppercase tracking-wide text-black hover:opacity-60 transition-opacity py-2"
                         >
                             Abiral.
                         </a>
@@ -58,8 +58,8 @@ function Navbar() {
                             ))}
                         </ul>
 
-                        {/* Mobile Hamburger */}
-                        <div className="md:hidden">
+                        {/* Mobile Hamburger - 44px min touch target */}
+                        <div className="md:hidden flex items-center justify-center min-w-[44px] min-h-[44px] -mr-2">
                             <Hamburger
                                 toggled={isOpen}
                                 toggle={setOpen}
@@ -74,13 +74,13 @@ function Navbar() {
             {/* Mobile Menu Overlay - Brutalist */}
             <div className={`md:hidden fixed inset-0 z-40 transition-all duration-300 ${isOpen ? 'opacity-100 visible' : 'opacity-0 invisible pointer-events-none'
                 } bg-[#E6E6E6]`}>
-                <div className="flex flex-col items-start justify-center h-full px-8">
-                    <ul className="flex flex-col gap-6">
+                <div className="flex flex-col items-start justify-center h-full px-6 sm:px-8">
+                    <ul className="flex flex-col gap-4 sm:gap-6">
                         {navLinks.map((link, index) => (
                             <li key={link.href}>
                                 <a
                                     href={link.href}
-                                    className="font-['Archivo_Black'] text-5xl uppercase text-black hover:opacity-50 transition-opacity"
+                                    className="font-['Archivo_Black'] text-4xl sm:text-5xl uppercase text-black hover:opacity-50 transition-opacity block py-2 min-h-[48px]"
                                     onClick={() => setOpen(false)}
                                     style={{
                                         opacity: isOpen ? 1 : 0,

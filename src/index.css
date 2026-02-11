@@ -282,10 +282,26 @@ a {
 }
 
 /* ═══════════════════════════════════════════════════════════════
-   MOBILE OPTIMIZATIONS
+   RESPONSIVE: MOBILE, TABLET, DESKTOP
 ═══════════════════════════════════════════════════════════════ */
 
-@media (max-width: 768px) {
+/* Prevent horizontal overflow on all viewports */
+html {
+  overflow-x: hidden;
+}
+body {
+  overflow-x: hidden;
+}
+
+/* Mobile: small phones (max 479px) */
+@media (max-width: 479px) {
+  body {
+    font-size: 14px;
+  }
+}
+
+/* Mobile: phones (480px–767px) */
+@media (max-width: 767px) {
   body {
     font-size: 14px;
   }
@@ -295,6 +311,21 @@ a {
   .tonal-card:hover {
     transform: none;
     box-shadow: none;
+  }
+
+  .brutalist-btn,
+  .brutalist-btn-outline {
+    min-height: 44px;
+    padding: 12px 20px;
+    font-size: 10px;
+  }
+}
+
+/* Tablet: (768px–1023px) */
+@media (min-width: 768px) and (max-width: 1023px) {
+  .brutalist-btn,
+  .brutalist-btn-outline {
+    min-height: 44px;
   }
 }
 

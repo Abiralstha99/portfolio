@@ -4,7 +4,7 @@ import Navbar from './components/Navbar'
 
 function App() {
   return (
-    <div className="min-h-screen bg-[#E6E6E6] grain-overlay">
+    <div className="min-h-screen bg-[#E6E6E6] grain-overlay overflow-x-hidden">
       <Navbar />
       <main>
         <Intro />

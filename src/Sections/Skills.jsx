@@ -17,13 +17,13 @@ function Skills() {
     }
 
     return (
-        <section id="skills" className="py-32 px-6 md:px-12 lg:px-16 bg-[#D9D9D9]">
+        <section id="skills" className="py-16 sm:py-24 md:py-32 px-4 sm:px-6 md:px-12 lg:px-16 bg-[#D9D9D9]">
             <div className="max-w-7xl mx-auto">
                 {/* Section Header - Brutalist */}
-                <div className="mb-16 flex flex-col md:flex-row md:items-end md:justify-between gap-6">
+                <div className="mb-10 sm:mb-16 flex flex-col md:flex-row md:items-end md:justify-between gap-4 sm:gap-6">
                     <div>
                         <motion.p
-                            className="font-['IBM_Plex_Mono'] text-[9px] tracking-[0.3em] uppercase text-[#666666] mb-4"
+                            className="font-['IBM_Plex_Mono'] text-[9px] tracking-[0.3em] uppercase text-[#666666] mb-3 sm:mb-4"
                             initial={{ opacity: 0, y: 20 }}
                             whileInView={{ opacity: 1, y: 0 }}
                             viewport={{ once: true }}
@@ -33,7 +33,7 @@ function Skills() {
                         </motion.p>
 
                         <motion.h2
-                            className="font-['Archivo_Black'] text-4xl md:text-5xl text-black uppercase"
+                            className="font-['Archivo_Black'] text-3xl sm:text-4xl md:text-5xl text-black uppercase"
                             initial={{ opacity: 0, y: 20 }}
                             whileInView={{ opacity: 1, y: 0 }}
                             viewport={{ once: true }}
@@ -59,11 +59,11 @@ function Skills() {
                 </div>
 
                 {/* Skills Grid - Brutalist Cards */}
-                <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-4">
+                <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-3 sm:gap-4">
                     {skillsData.map((group, idx) => (
                         <motion.div
                             key={group.category}
-                            className="brutalist-card-white p-8"
+                            className="brutalist-card-white p-6 sm:p-8"
                             initial="hidden"
                             whileInView="visible"
                             viewport={{ once: true, amount: 0.3 }}
@@ -71,7 +71,7 @@ function Skills() {
                         >
                             {/* Category Title */}
                             <motion.p
-                                className="font-['IBM_Plex_Mono'] text-[9px] tracking-[0.2em] uppercase text-[#666666] mb-6 pb-4 border-b border-black"
+                                className="font-['IBM_Plex_Mono'] text-[9px] tracking-[0.2em] uppercase text-[#666666] mb-4 sm:mb-6 pb-3 sm:pb-4 border-b border-black"
                                 variants={itemVariants}
                             >
                                 {group.category}
@@ -95,7 +95,7 @@ function Skills() {
                                                 className="w-5 h-5 object-contain opacity-70 group-hover:opacity-100 transition-opacity duration-200"
                                             />
                                         )}
-                                        <span className="text-[14px] text-black">
+                                        <span className="text-[13px] sm:text-[14px] text-black">
                                             {skill.name}
                                         </span>
                                     </motion.div>
