@@ -1,77 +1,38 @@
 [
-    {
-        "category": "Frontend",
-        "skills": [
-            {
-                "name": "HTML",
-                "logo": "https://img.icons8.com/color/48/html-5--v1.png"
-            },
-            {
-                "name": "CSS",
-                "logo": "https://img.icons8.com/color/48/css3.png"
-            },
-            {
-                "name": "JavaScript",
-                "logo": "https://img.icons8.com/color/48/javascript--v1.png"
-            },
-            {
-                "name": "TypeScript",
-                "logo": "https://img.icons8.com/color/48/typescript.png"
-            },
-            {
-                "name": "React",
-                "logo": "https://img.icons8.com/color/48/react-native.png"
-            },
-            {
-                "name": "Redux",
-                "logo": "https://img.icons8.com/color/48/redux.png"
-            },
-            {
-                "name": "Tailwind CSS",
-                "logo": "https://img.icons8.com/color/48/tailwindcss.png"
-            }
-        ]
-    },
-    {
-        "category": "Backend",
-        "skills": [
-            {
-                "name": "Node.js",
-                "logo": "https://img.icons8.com/color/48/nodejs.png"
-            },
-            {
-                "name": "Express",
-                "logo": "https://cdn.brandfetch.io/idh1lvV1BF/w/124/h/124/theme/dark/icon.jpeg?c=1bxid64Mup7aczewSAYMX&t=1756519165444"
-            },
-            {
-                "name": "MongoDB",
-                "logo": "https://img.icons8.com/color/48/mongodb.png"
-            },
-            {
-                "name": "PostgreSQL",
-                "logo": "https://img.icons8.com/color/48/postgresql.png"
-            }
-        ]
-    },
-    {
-        "category": "Tools",
-        "skills": [
-            {
-                "name": "Git",
-                "logo": "https://img.icons8.com/color/48/git.png"
-            },
-            {
-                "name": "GitHub",
-                "logo": "https://img.icons8.com/?size=100&id=106564&format=png&color=000000"
-            },
-            {
-                "name": "Postman",
-                "logo": "https://img.icons8.com/color/48/postman-api.png"
-            },
-            {
-                "name": "Figma",
-                "logo": "https://img.icons8.com/color/48/figma--v1.png"
-            }
-        ]
-    }
+  {
+    "category": "Languages",
+    "skills": [
+      {"name": "JavaScript", "logo": "https://img.icons8.com/color/48/javascript--v1.png"},
+      {"name": "TypeScript", "logo": "https://img.icons8.com/color/48/typescript.png"},
+      {"name": "C", "logo": "https://img.icons8.com/color/48/c-programming.png"},
+      {"name": "Java", "logo": "https://img.icons8.com/color/48/java-coffee-cup-logo.png"},
+      {"name": "C#", "logo": "https://img.icons8.com/color/48/c-sharp-logo.png"}
+    ]
+  },
+  {
+    "category": "Frameworks",
+    "skills": [
+      {"name": "React", "logo": "https://img.icons8.com/color/48/react-native.png"},
+      {"name": "Redux", "logo": "https://img.icons8.com/color/48/redux.png"},
+      {"name": "Tailwind CSS", "logo": "https://img.icons8.com/color/48/tailwindcss.png"},
+      {"name": "Node.js", "logo": "https://img.icons8.com/color/48/nodejs.png"},
+      {"name": "Express", "logo": "https://cdn.brandfetch.io/idh1lvV1BF/w/124/h/124/theme/dark/icon.jpeg?c=1bxid64Mup7aczewSAYMX&t=1756519165444"},
+      {"name": "MongoDB", "logo": "https://img.icons8.com/color/48/mongodb.png"},
+      {"name": "PostgreSQL", "logo": "https://img.icons8.com/color/48/postgresql.png"}
+    ]
+  },
+  {
+    "category": "Tools",
+    "skills": [
+      {"name": "Git", "logo": "https://img.icons8.com/color/48/git.png"},
+      {"name": "GitHub", "logo": "https://img.icons8.com/?size=100&id=106564&format=png&color=000000"},
+      {"name": "Postman", "logo": "https://img.icons8.com/color/48/postman-api.png"},
+      {"name": "Figma", "logo": "https://img.icons8.com/color/48/figma--v1.png"},
+      {"name": "Docker", "logo": "https://img.icons8.com/color/48/docker.png"},
+      {"name": "Amazon S3 (AWS)", "logo": "https://img.icons8.com/color/48/amazon-web-services.png"},
+      {"name": "pandas", "logo": "https://img.icons8.com/color/48/python.png"},
+      {"name": "NumPy", "logo": "https://img.icons8.com/color/48/python.png"},
+      {"name": "Matplotlib", "logo": "https://img.icons8.com/color/48/python.png"}
+    ]
+  }
 ]
