@@ -6,16 +6,7 @@ function Intro() {
         <section className="min-h-screen flex flex-col justify-center px-4 sm:px-6 md:px-12 lg:px-16 pt-16 sm:pt-20">
             <div className="max-w-7xl mx-auto w-full">
                 {/* Main Hero Typography - Massive Brutalist */}
-                <div className="mb-12 sm:mb-16 md:mb-20">
-                    <motion.p
-                        className="font-['IBM_Plex_Mono'] text-[9px] sm:text-[10px] tracking-[0.3em] uppercase text-[#666666] mb-4 sm:mb-8"
-                        initial={{ opacity: 0, y: 20 }}
-                        animate={{ opacity: 1, y: 0 }}
-                        transition={{ duration: 0.5, delay: 0.2 }}
-                    >
-                        Developer & Designer
-                    </motion.p>
-
+                <div className="mb-10 sm:mb-14 md:mb-16">
                     <motion.h1
                         className="font-['Archivo_Black'] text-[clamp(2.75rem,12vw,12rem)] sm:text-[clamp(3.5rem,15vw,12rem)] text-black leading-[0.85] tracking-[-0.03em] uppercase"
                         initial={{ opacity: 0, y: 60 }}
@@ -28,7 +19,7 @@ function Intro() {
                     </motion.h1>
 
                     <motion.div
-                        className="mt-6 sm:mt-10 max-w-lg"
+                        className="mt-4 sm:mt-6 max-w-lg"
                         initial={{ opacity: 0, y: 20 }}
                         animate={{ opacity: 1, y: 0 }}
                         transition={{ duration: 0.5, delay: 0.7 }}
@@ -98,7 +89,7 @@ function Intro() {
 
                 {/* Scroll Indicator - Industrial */}
                 <motion.div
-                    className="mt-12 sm:mt-16 md:mt-24 flex items-center gap-4 sm:gap-6"
+                    className="mt-10 sm:mt-14 md:mt-20 flex items-center gap-4 sm:gap-6"
                     initial={{ opacity: 0 }}
                     animate={{ opacity: 1 }}
                     transition={{ duration: 0.5, delay: 1.2 }}
