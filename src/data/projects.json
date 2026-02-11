@@ -1,26 +1,33 @@
 [
   {
-    "title": "GitLog",
-    "description": "A simple web app to store and view notes from books I’ve read. Built with Node.js, Express, and PostgreSQL.",
-    "image": "/images/project1.png",
-    "githubLink": "https://github.com/Abiralstha99/My-book-log"
+    "title": "foot-steps",
+    "description": "A full-stack travel photo app that automatically turns trip photos into an interactive timeline and map-based album using EXIF metadata and AI landmark detection.",
+    "image": "",
+    "githubLink": "https://github.com/Abiralstha99/foot-steps"
   },
   {
-    "title": "CV builder",
-    "description": "A responsive web application built with React that allows users to create resumes through form. I built it to learn about fundamentals of react, including components, props, hooks and dynamic form handling",
+    "title": "Inhibitor",
+    "description": "Chrome extension to reduce YouTube distractions – hide feed and recommendations, and set focused sessions.",
+    "image": "inhibitor",
+    "githubLink": "https://github.com/TejaswiAmatya/Inhibitor"
+  },
+  {
+    "title": "Grease Analysis Tool",
+    "description": "Software for analyzing grease absorption based on the infrared intake and identifying potential anomalies in samples by comparing with baseline data.",
+    "image": "mrg",
+    "githubLink": "https://github.com/anhducnguyen2006/mrg-labs-graphing-app"
+  },
+  {
+    "title": "Cinemas",
+    "description": "A web application for managing cinemas and their shows. Built with React, Node.js, Express, and PostgreSQL.",
     "image": "/images/project2.png",
-    "githubLink": "https://github.com/Abiralstha99/CV-Builder"
+    "githubLink": "https://github.com/Abiralstha99/Cinemas"
   },
   {
     "title": "Hennest",
     "description": "Hennest is a financial management platform built with React, Clerk, and TailwindCSS that lets users connect bank accounts, set spending goals, and get real-time budget alerts with spending insights.",
-    "image": "/images/project3.png",
-    "githubLink": "https://github.com/Abiralstha99/HenNest"
-  },
-  {
-    "title": "Huffman Coding",
-    "description": "Implementation of Huffman Coding for text compression",
-    "image": "/src/assets/projects/huffman.png",
-    "githubLink": "https://github.com/Abiralstha99/HuffmanCoding"
+    "image": "hennest",
+    "githubLink": "https://github.com/Abiralstha99/HenNest",
+    "youtubeLink": "https://www.youtube.com/watch?v=54vOOQL5bcw"
   }
 ]
