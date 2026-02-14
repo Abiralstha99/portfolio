@@ -3,6 +3,7 @@ import { motion } from 'framer-motion'
 import projects from '../data/projects.json'
 import inhibitorImage from '../assets/projects/Inhibitor.png'
 import cinemasImage from '../assets/projects/cinemas.png'
+import footstepsImage from '../assets/projects/footsteps.png'
 import hennestImage from '../assets/projects/hennest.png'
 import huffmanImage from '../assets/projects/huffman.png'
 import mrgImage from '../assets/projects/mrg.png'
@@ -11,6 +12,7 @@ import mrgImage from '../assets/projects/mrg.png'
 const projectImageMap = {
   'inhibitor': inhibitorImage,
   'cinemas': cinemasImage,
+  'footsteps': footstepsImage,
   'hennest': hennestImage,
   'huffman': huffmanImage,
   'mrg': mrgImage,
