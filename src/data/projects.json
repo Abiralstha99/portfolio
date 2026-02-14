@@ -20,7 +20,7 @@
   {
     "title": "Cinemas",
     "description": "A web application for managing cinemas and their shows. Built with React, Node.js, Express, and PostgreSQL.",
-    "image": "/images/project2.png",
+    "image": "cinemas",
     "githubLink": "https://github.com/Abiralstha99/Cinemas"
   },
   {

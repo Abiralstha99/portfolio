@@ -2,6 +2,7 @@ import React from 'react'
 import { motion } from 'framer-motion'
 import projects from '../data/projects.json'
 import inhibitorImage from '../assets/projects/Inhibitor.png'
+import cinemasImage from '../assets/projects/cinemas.png'
 import hennestImage from '../assets/projects/hennest.png'
 import huffmanImage from '../assets/projects/huffman.png'
 import mrgImage from '../assets/projects/mrg.png'
@@ -9,6 +10,7 @@ import mrgImage from '../assets/projects/mrg.png'
 // Local project images (in src/assets) – key must match "image" value in projects.json
 const projectImageMap = {
   'inhibitor': inhibitorImage,
+  'cinemas': cinemasImage,
   'hennest': hennestImage,
   'huffman': huffmanImage,
   'mrg': mrgImage,
