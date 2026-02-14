@@ -18,7 +18,7 @@
       {"name": "Node.js", "logo": "https://img.icons8.com/color/48/nodejs.png"},
       {"name": "Express", "logo": "https://cdn.brandfetch.io/idh1lvV1BF/w/124/h/124/theme/dark/icon.jpeg?c=1bxid64Mup7aczewSAYMX&t=1756519165444"},
       {"name": "MongoDB", "logo": "https://img.icons8.com/color/48/mongodb.png"},
-      {"name": "PostgreSQL", "logo": "https://img.icons8.com/color/48/postgresql.png"}
+      {"name": "PostgreSQL", "logo": "https://img.icons8.com/?size=100&id=38561&format=png&color=000000"}
     ]
   },
   {
@@ -26,7 +26,7 @@
     "skills": [
       {"name": "Git", "logo": "https://img.icons8.com/color/48/git.png"},
       {"name": "GitHub", "logo": "https://img.icons8.com/?size=100&id=106564&format=png&color=000000"},
-      {"name": "Postman", "logo": "https://img.icons8.com/color/48/postman-api.png"},
+      {"name": "Postman", "logo": "https://cdn.brandfetch.io/idrVtxty7B/w/240/h/240/theme/dark/icon.png?c=1bxid64Mup7aczewSAYMX&t=1667906412376"},
       {"name": "Figma", "logo": "https://img.icons8.com/color/48/figma--v1.png"},
       {"name": "Docker", "logo": "https://img.icons8.com/color/48/docker.png"},
       {"name": "Amazon S3 (AWS)", "logo": "https://img.icons8.com/color/48/amazon-web-services.png"},

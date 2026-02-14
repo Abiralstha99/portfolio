@@ -44,15 +44,15 @@ function Contact() {
 
                         {/* Email - Brutalist Style */}
                         <a
-                            href="mailto:your.email@example.com"
+                            href="abiralstha333@gmail.com"
                             className="brutalist-btn inline-flex w-fit max-w-full mb-8 sm:mb-10 min-w-0"
                         >
-                            <span className="truncate min-w-0">your.email@example.com</span>
+                            <span className="truncate min-w-0">abiralstha333@gmail.com</span>
                             <span className="flex-shrink-0">↗</span>
                         </a>
 
                         {/* Social Links - Industrial */}
-                        <div className="flex flex-wrap items-center gap-6 sm:gap-8">
+                        <div className="flex flex-wrap items-end sm:gap-10">
                             <a
                                 href="https://github.com/Abiralstha99"
                                 target="_blank"
@@ -62,20 +62,12 @@ function Contact() {
                                 GitHub
                             </a>
                             <a
-                                href="https://linkedin.com/in/yourprofile"
+                                href="https://www.linkedin.com/in/abiral-shrestha-/"
                                 target="_blank"
                                 rel="noopener noreferrer"
                                 className="font-['IBM_Plex_Mono'] text-[10px] tracking-[0.2em] uppercase text-[#666666] hover:text-black transition-colors duration-200"
                             >
                                 LinkedIn
-                            </a>
-                            <a
-                                href="https://instagram.com/yourhandle"
-                                target="_blank"
-                                rel="noopener noreferrer"
-                                className="font-['IBM_Plex_Mono'] text-[10px] tracking-[0.2em] uppercase text-[#666666] hover:text-black transition-colors duration-200"
-                            >
-                                Instagram
                             </a>
                         </div>
                     </motion.div>
@@ -91,9 +83,6 @@ function Contact() {
                 >
                     <p className="font-['IBM_Plex_Mono'] text-[9px] tracking-[0.2em] uppercase text-[#666666]">
                         © {currentYear} Abiral Shrestha
-                    </p>
-                    <p className="font-['IBM_Plex_Mono'] text-[9px] tracking-[0.2em] uppercase text-[#666666]">
-                        Built with intention
                     </p>
                 </motion.div>
             </div>
