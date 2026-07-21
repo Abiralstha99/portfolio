@@ -50,14 +50,13 @@ function ProjectEntry({ project, index }) {
       )}
 
       {image && (
-        <div ref={imageRef} className="overflow-hidden rounded-md border border-[#e5e5e5] mb-6">
-          <Motion.img
-            src={image}
-            alt={`${project.title} preview`}
-            style={{ y }}
-            className="w-full block"
-          />
-        </div>
+        <Motion.img
+          ref={imageRef}
+          src={image}
+          alt={`${project.title} preview`}
+          style={{ y }}
+          className="w-full block rounded-md border border-[#e5e5e5] mb-6"
+        />
       )}
 
       <div className="flex flex-wrap items-center gap-6">
