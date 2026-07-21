@@ -1,23 +1,23 @@
 /* ═══════════════════════════════════════════════════════════════
-   MINIMAL FEED — Dark Editorial Design System
+   EDITORIAL — Light Medium-Style Design System
 ═══════════════════════════════════════════════════════════════ */
 
 @import "tailwindcss";
 
 :root {
-  color-scheme: dark;
+  color-scheme: light;
 
   /* ─── Color Palette ─── */
-  --color-background: #0a0a0a;
-  --color-text: #e8e8e6;
-  --color-text-muted: #8a8a8a;
-  --color-border: #1f1f1f;
-  --color-accent: #d4a15f;
-  --color-accent-rgb: 212, 161, 95;
+  --color-background: #ffffff;
+  --color-text: #1a1a1a;
+  --color-text-muted: #6b6b6b;
+  --color-border: #e5e5e5;
+  --color-accent: #a02334;
 
   /* ─── Typography ─── */
-  --font-display: "Source Serif 4", Georgia, serif;
+  --font-display: "Fraunces", Georgia, serif;
   --font-body: "Inter", -apple-system, BlinkMacSystemFont, sans-serif;
+  --font-mono: "JetBrains Mono", ui-monospace, "SFMono-Regular", monospace;
 
   /* ─── Spacing Scale ─── */
   --space-1: 4px;
@@ -52,8 +52,8 @@ body {
   padding: 0;
   background-color: var(--color-background);
   font-family: var(--font-body);
-  font-size: 15px;
-  line-height: 1.7;
+  font-size: 17px;
+  line-height: 1.75;
   color: var(--color-text);
   overflow-x: hidden;
   -webkit-font-smoothing: antialiased;
@@ -68,21 +68,8 @@ body {
   font-family: var(--font-display);
 }
 
-/* ─── Material Symbols (icon font) ─── */
-.material-symbols-outlined {
-  font-family: "Material Symbols Outlined";
-  font-weight: normal;
-  font-style: normal;
-  line-height: 1;
-  letter-spacing: normal;
-  text-transform: none;
-  display: inline-block;
-  white-space: nowrap;
-  word-wrap: normal;
-  direction: ltr;
-  font-feature-settings: "liga";
-  -webkit-font-smoothing: antialiased;
-  font-variation-settings: "FILL" 0, "wght" 400, "GRAD" 0, "opsz" 24;
+.font-mono {
+  font-family: var(--font-mono);
 }
 
 /* ═══════════════════════════════════════════════════════════════
@@ -91,7 +78,7 @@ body {
 
 ::selection {
   background: var(--color-accent);
-  color: var(--color-background);
+  color: #ffffff;
 }
 
 a:focus-visible,
@@ -136,6 +123,6 @@ a {
 
 @media (max-width: 479px) {
   body {
-    font-size: 14px;
+    font-size: 16px;
   }
 }

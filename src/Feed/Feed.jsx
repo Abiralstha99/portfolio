@@ -5,7 +5,7 @@ import projects from '../data/projects.json'
 
 function Feed() {
   return (
-    <div className="max-w-[720px] mx-auto px-6 sm:px-8">
+    <div className="max-w-[680px] mx-auto px-6 sm:px-8">
       <AboutEntry />
       <SkillsEntry />
       {projects.map((project, index) => (
