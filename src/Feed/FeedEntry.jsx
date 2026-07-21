@@ -1,16 +1,16 @@
-// Aliased to a PascalCase name so the linter's varsIgnorePattern treats it as
-// used (JSX member usage `Motion.article` isn't tracked by this config).
-import { motion as Motion } from 'framer-motion'
+import { motion as Motion, useReducedMotion } from 'framer-motion'
 
-function FeedEntry({ id, pinned = false, children }) {
+// Shared wrapper for every feed entry: consistent vertical rhythm, a hairline
+// divider between entries, and a single subtle fade/slide-up on scroll-in.
+function FeedEntry({ id, children }) {
+  const reduceMotion = useReducedMotion()
+
   return (
     <Motion.article
       id={id}
-      className={`py-14 sm:py-20 border-b border-[#1f1f1f] last:border-b-0 ${
-        pinned ? 'border-l-2 border-l-[#d4a15f] pl-6 -ml-6 bg-[rgba(212,161,95,0.06)]' : ''
-      }`}
-      initial={{ opacity: 0, y: 24 }}
-      whileInView={{ opacity: 1, y: 0 }}
+      className="py-16 sm:py-20 border-b border-[#e5e5e5] last:border-b-0"
+      initial={reduceMotion ? false : { opacity: 0, y: 16 }}
+      whileInView={reduceMotion ? undefined : { opacity: 1, y: 0 }}
       viewport={{ once: true, amount: 0.2 }}
       transition={{ duration: 0.5, ease: [0.4, 0, 0.2, 1] }}
     >
