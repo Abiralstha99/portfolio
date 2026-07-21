@@ -16,13 +16,13 @@ function Navbar() {
   return (
     <nav
       className={`fixed top-0 left-0 right-0 z-50 transition-colors duration-200 ${
-        scrolled ? 'bg-[#0a0a0a]/90 backdrop-blur border-b border-[#1f1f1f]' : 'bg-transparent'
+        scrolled ? 'bg-white border-b border-[#e5e5e5]' : 'bg-transparent'
       }`}
     >
-      <div className="max-w-[720px] mx-auto px-6 sm:px-8 flex items-center justify-between h-16 sm:h-20">
+      <div className="max-w-[680px] mx-auto px-6 sm:px-8 flex items-center justify-between h-16 sm:h-20">
         <a
           href="#about"
-          className="font-display text-base text-[#e8e8e6] hover:opacity-70 transition-opacity"
+          className="font-display text-lg text-[#1a1a1a] hover:text-[#a02334] transition-colors"
         >
           Abiral Shrestha
         </a>
@@ -34,7 +34,7 @@ function Navbar() {
               href={resume.href}
               target="_blank"
               rel="noopener noreferrer"
-              className="text-[12px] tracking-[0.1em] uppercase text-[#8a8a8a] hover:text-[#d4a15f] transition-colors duration-200"
+              className="font-mono text-[11px] tracking-[0.1em] uppercase text-[#6b6b6b] hover:text-[#a02334] transition-colors duration-200"
             >
               Resume
             </a>

@@ -12,9 +12,9 @@ function Social() {
           target={href.startsWith('mailto:') ? undefined : '_blank'}
           rel={href.startsWith('mailto:') ? undefined : 'noopener noreferrer'}
           aria-label={label}
-          className="text-[#8a8a8a] hover:text-[#e8e8e6] transition-colors duration-200"
+          className="text-[#6b6b6b] hover:text-[#1a1a1a] transition-colors duration-200"
         >
-          <Icon size={18} strokeWidth={1.75} />
+          <Icon size={20} weight="regular" />
         </a>
       ))}
     </div>
