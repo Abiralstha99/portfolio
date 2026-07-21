@@ -3,7 +3,8 @@
     "title": "foot-steps",
     "description": "A full-stack travel photo app that automatically turns trip photos into an interactive timeline and map-based album using EXIF metadata and AI landmark detection.",
     "image": "footsteps",
-    "githubLink": "https://github.com/Abiralstha99/foot-steps"
+    "githubLink": "https://github.com/Abiralstha99/foot-steps",
+    "liveLink": "https://get-footsteps.vercel.app/"
   },
   {
     "title": "Inhibitor",
