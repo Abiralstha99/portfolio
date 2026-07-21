@@ -1,17 +1,14 @@
-import { useState } from 'react'
-import { Intro, About, Skills, Project, Contact } from '.'
 import Navbar from './components/Navbar'
+import ReadingProgress from './components/ReadingProgress'
+import Feed from './Feed/Feed'
 
 function App() {
   return (
-    <div className="min-h-screen bg-[#E6E6E6] grain-overlay overflow-x-hidden">
+    <div className="min-h-screen bg-white">
+      <ReadingProgress />
       <Navbar />
-      <main>
-        <Intro />
-        <About />
-        <Skills />
-        <Project />
-        <Contact />
+      <main className="pt-16 sm:pt-20">
+        <Feed />
       </main>
     </div>
   )

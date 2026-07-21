@@ -23,7 +23,14 @@ export default defineConfig([
       },
     },
     rules: {
-      'no-unused-vars': ['error', { varsIgnorePattern: '^[A-Z_]' }],
+      // JSX-referenced identifiers aren't tracked by this config (no
+      // eslint-plugin-react), so PascalCase names are treated as "used" via the
+      // ignore patterns — applied to both plain vars and destructured params
+      // (e.g. `{ icon: Icon }` rendered as `<Icon />`).
+      'no-unused-vars': [
+        'error',
+        { varsIgnorePattern: '^[A-Z_]', argsIgnorePattern: '^[A-Z_]' },
+      ],
     },
   },
 ])

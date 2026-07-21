@@ -1,24 +1,24 @@
-import React from 'react'
-import GitHubIcon from '@mui/icons-material/GitHub';
-import LinkedInIcon from '@mui/icons-material/LinkedIn';
-import InstagramIcon from '@mui/icons-material/Instagram';
+import { socialLinks } from '../data/social'
 
 function Social() {
-    return (
-        <div className='flex flex-col items-center space-y-6'>
-            <a href="https://github.com/Abiralstha99" target='_blank' rel='noopener noreferrer' style={{ outline: 'none' }}>
-                <GitHubIcon className='text-white hover:text-gray-300 transition-colors cursor-pointer' fontSize='large' />
-            </a>
-            <a href="https://linkedin.com/in/yourprofile" target='_blank' rel='noopener noreferrer' style={{ outline: 'none' }}>
-                <LinkedInIcon className='text-white hover:text-gray-300 transition-colors cursor-pointer' fontSize='large' />
-            </a>
-            <a href="https://instagram.com/yourhandle" target='_blank' rel='noopener noreferrer' style={{ outline: 'none' }}>
-                <InstagramIcon className='text-white hover:text-gray-300 transition-colors cursor-pointer' fontSize='large' />
-            </a>
-            {/* Vertical line extending down */}
-            <div className='w-px h-32 bg-white opacity-30 mt-4'></div>
-        </div>
-    )
+  const iconLinks = socialLinks.filter((link) => link.label !== 'Resume')
+
+  return (
+    <div className="flex items-center gap-4">
+      {iconLinks.map(({ label, href, icon: Icon }) => (
+        <a
+          key={label}
+          href={href}
+          target={href.startsWith('mailto:') ? undefined : '_blank'}
+          rel={href.startsWith('mailto:') ? undefined : 'noopener noreferrer'}
+          aria-label={label}
+          className="text-[#6b6b6b] hover:text-[#1a1a1a] transition-colors duration-200"
+        >
+          <Icon size={20} weight="regular" />
+        </a>
+      ))}
+    </div>
+  )
 }
 
 export default Social
