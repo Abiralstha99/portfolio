@@ -7,7 +7,7 @@ function ReadingProgress() {
   return (
     <Motion.div
       aria-hidden="true"
-      className="fixed left-0 top-0 bottom-0 w-[2px] bg-[#a02334] origin-top z-50"
+      className="fixed left-0 top-0 bottom-0 w-[2px] bg-[#a02334] origin-top z-50 pointer-events-none"
       style={{ scaleY: scrollYProgress }}
     />
   )
