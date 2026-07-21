@@ -1,3 +1,5 @@
+import { useRef } from 'react'
+import { motion as Motion, useScroll, useTransform, useReducedMotion } from 'framer-motion'
 import FeedEntry from './FeedEntry'
 import inhibitorImage from '../assets/projects/Inhibitor.png'
 import cinemasImage from '../assets/projects/cinemas.png'
@@ -16,60 +18,62 @@ const projectImageMap = {
   mrg: mrgImage,
 }
 
+const linkClass =
+  'font-mono text-[12px] tracking-[0.05em] text-[#6b6b6b] hover:text-[#a02334] transition-colors duration-200'
+
 function ProjectEntry({ project, index }) {
   const image = projectImageMap[project.image?.toLowerCase()] ?? null
+  const reduceMotion = useReducedMotion()
+
+  const imageRef = useRef(null)
+  const { scrollYProgress } = useScroll({
+    target: imageRef,
+    offset: ['start end', 'end start'],
+  })
+  // Image drifts slightly slower than the page; no drift when reduced-motion is on.
+  const y = useTransform(scrollYProgress, [0, 1], reduceMotion ? [0, 0] : [24, -24])
 
   return (
     <FeedEntry id={`project-${index}`}>
-      <p className="text-[11px] tracking-[0.2em] uppercase text-[#8a8a8a] mb-4">
-        Project {String(index + 1).padStart(2, '0')}
-      </p>
-
-      {image && (
-        <img
-          src={image}
-          alt={`${project.title} preview`}
-          className="w-full rounded-md mb-6 border border-[#1f1f1f]"
-        />
-      )}
-
-      <h2 className="font-display text-2xl sm:text-3xl text-[#e8e8e6] mb-4">
+      <h2 className="font-display text-3xl sm:text-4xl text-[#1a1a1a] mb-3">
         {project.title}
       </h2>
 
-      <p className="text-[15px] text-[#c4c4c2] leading-relaxed max-w-[65ch] mb-6">
+      <p className="text-[17px] text-[#3a3a3a] leading-[1.75] mb-4">
         {project.description}
       </p>
 
+      {project.stack?.length > 0 && (
+        <p className="font-mono text-[12px] tracking-[0.05em] text-[#6b6b6b] mb-6">
+          {project.stack.join('  ·  ')}
+        </p>
+      )}
+
+      {image && (
+        <div ref={imageRef} className="overflow-hidden rounded-md border border-[#e5e5e5] mb-6">
+          <Motion.img
+            src={image}
+            alt={`${project.title} preview`}
+            style={{ y }}
+            className="w-full block"
+          />
+        </div>
+      )}
+
       <div className="flex flex-wrap items-center gap-6">
         {project.liveLink && (
-          <a
-            href={project.liveLink}
-            target="_blank"
-            rel="noopener noreferrer"
-            className="text-[13px] tracking-[0.05em] text-[#8a8a8a] hover:text-[#d4a15f] transition-colors duration-200"
-          >
-            Live →
+          <a href={project.liveLink} target="_blank" rel="noopener noreferrer" className={linkClass}>
+            Live
           </a>
         )}
         {project.githubLink && (
-          <a
-            href={project.githubLink}
-            target="_blank"
-            rel="noopener noreferrer"
-            className="text-[13px] tracking-[0.05em] text-[#8a8a8a] hover:text-[#d4a15f] transition-colors duration-200"
-          >
-            GitHub →
+          <a href={project.githubLink} target="_blank" rel="noopener noreferrer" className={linkClass}>
+            GitHub
           </a>
         )}
         {project.youtubeLink && (
-          <a
-            href={project.youtubeLink}
-            target="_blank"
-            rel="noopener noreferrer"
-            className="text-[13px] tracking-[0.05em] text-[#8a8a8a] hover:text-[#d4a15f] transition-colors duration-200"
-          >
-            YouTube →
+          <a href={project.youtubeLink} target="_blank" rel="noopener noreferrer" className={linkClass}>
+            YouTube
           </a>
         )}
       </div>
