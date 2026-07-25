@@ -1,15 +1,19 @@
 import Navbar from './components/Navbar'
 import ReadingProgress from './components/ReadingProgress'
+import SideBreadcrumb from './components/SideBreadcrumb'
 import Feed from './Feed/Feed'
+import Footer from './components/Footer'
 
 function App() {
   return (
     <div className="min-h-screen bg-white">
       <ReadingProgress />
       <Navbar />
-      <main className="pt-16 sm:pt-20">
+      <SideBreadcrumb />
+      <main>
         <Feed />
       </main>
+      <Footer />
     </div>
   )
 }
