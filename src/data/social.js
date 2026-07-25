@@ -1,5 +1,5 @@
 import { GithubLogo, LinkedinLogo, Envelope, FileText } from '@phosphor-icons/react'
-import resumePdf from '../assets/Resume_AbiralShrestha.pdf'
+import resumePdf from '../assets/AbiralShrestha_resume.pdf'
 
 export const socialLinks = [
   { label: 'Email', href: 'mailto:abiralstha333@gmail.com', icon: Envelope },
