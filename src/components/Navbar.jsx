@@ -1,6 +1,14 @@
+import { socialLinks } from '../data/social'
+
+const navbarOrder = ['Resume', 'GitHub', 'LinkedIn', 'Email']
+
 function Navbar() {
+  const links = navbarOrder
+    .map((label) => socialLinks.find((link) => link.label === label))
+    .filter(Boolean)
+
   return (
-    <nav className="border-b border-[#e5e5e5]">
+    <nav>
       <div className="max-w-[680px] mx-auto px-6 sm:px-8 flex items-center justify-between h-16 sm:h-20">
         <a
           href="#about"
@@ -9,14 +17,17 @@ function Navbar() {
           Abiral Shrestha
         </a>
 
-        <div className="flex items-center gap-6">
-          {['about', 'skills', 'experience', 'projects'].map((id) => (
+        <div className="flex items-center gap-5">
+          {links.map(({ label, href, icon: Icon }) => (
             <a
-              key={id}
-              href={`#${id}`}
-              className="font-mono text-[11px] tracking-[0.08em] text-[#6b6b6b] hover:text-[#1a1a1a] transition-colors duration-200"
+              key={label}
+              href={href}
+              target={href.startsWith('mailto:') ? undefined : '_blank'}
+              rel={href.startsWith('mailto:') ? undefined : 'noopener noreferrer'}
+              aria-label={label}
+              className="text-[#6b6b6b] hover:text-[#1a1a1a] transition-colors duration-200"
             >
-              {id}
+              <Icon size={20} weight="regular" />
             </a>
           ))}
         </div>
