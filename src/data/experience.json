@@ -1,0 +1,24 @@
+[
+  {
+    "role": "AI/ML Fellow",
+    "company": "Break Through Tech",
+    "period": "May 2026 – Present",
+    "description": "Selected from 3,000+ applicants for a year-long AI/ML fellowship. Built end-to-end machine learning pipelines on datasets of 50K+ records, achieving 85% classification accuracy using scikit-learn and TensorFlow while strengthening foundations in neural networks and responsible AI.",
+    "url": "breakthroughtech.org"
+  },
+  {
+    "role": "Product Designer Intern",
+    "company": "Develop for Good",
+    "period": "May 2026 – Present",
+    "description": "Collaborated with designers, engineers, and nonprofit stakeholders to build a mobile-first marketplace MVP. Translated product requirements into production-ready frontend features using Next.js and REST APIs while communicating technical tradeoffs to ensure alignment across technical and non-technical teams.",
+    "url": "developforgood.org"
+  },
+  {
+    "role": "Software Engineer Intern",
+    "company": "Sponsy",
+    "period": "March 2026 – May 2026",
+    "description": "Built core frontend features for the brand dashboard using Next.js and REST APIs, enabling brands to manage profiles and partnerships seamlessly. Designed the student-side PostgreSQL schema to support profiles, applications, and scholarship data at scale.",
+    "url": "https://scholarty.com/"
+  }
+]
+
