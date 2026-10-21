@@ -10,7 +10,7 @@ function AboutEntry() {
         className="w-30 h-30 rounded-full object-cover mb-6 border border-[#e5e5e5]"
       />
 
-      <h1 className="font-display text-[2rem] font-bold leading-tight text-[#1a1a1a] mb-2">
+      <h1 className="font-display text-[2rem] sm:text-4xl font-bold leading-tight text-[#1a1a1a] mb-2">
         Abiral Shrestha
       </h1>
 

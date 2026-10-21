@@ -31,21 +31,39 @@ export default function SideBreadcrumb() {
   }, [])
 
   return (
-    <nav className="hidden lg:flex flex-col gap-4 fixed left-6 xl:left-10 top-1/2 -translate-y-1/2 z-40">
-      {sections.map((id) => (
-        <a
-          key={id}
-          href={`#${id}`}
-          className={clsx(
-            'font-mono text-[11px] tracking-[0.1em] transition-colors duration-200',
-            active === id
-              ? 'text-[#1a1a1a] border-l-2 border-[#a02334] pl-2'
-              : 'text-[#b0b0b0] pl-[10px]'
-          )}
-        >
-          {id}
-        </a>
-      ))}
-    </nav>
+    <>
+      <nav aria-label="Section navigation" className="lg:hidden max-w-[680px] mx-auto px-6 sm:px-8 py-4 flex flex-wrap gap-x-4 gap-y-2">
+        {sections.map((id) => (
+          <a
+            key={id}
+            href={`#${id}`}
+            aria-current={active === id ? 'location' : undefined}
+            className={clsx(
+              'font-mono text-[11px] tracking-[0.1em] border-b-2 pb-0.5 transition-colors duration-200 hover:text-[#a02334]',
+              active === id ? 'text-[#1a1a1a] border-[#a02334]' : 'text-[#6b6b6b] border-transparent'
+            )}
+          >
+            {id}
+          </a>
+        ))}
+      </nav>
+      <nav aria-label="Section navigation" className="hidden lg:flex flex-col gap-4 fixed left-6 xl:left-10 top-1/2 -translate-y-1/2 z-40">
+        {sections.map((id) => (
+          <a
+            key={id}
+            href={`#${id}`}
+            aria-current={active === id ? 'location' : undefined}
+            className={clsx(
+              'font-mono text-[11px] tracking-[0.1em] transition-colors duration-200 hover:text-[#a02334]',
+              active === id
+                ? 'text-[#1a1a1a] border-l-2 border-[#a02334] pl-2'
+                : 'text-[#6b6b6b] pl-[10px]'
+            )}
+          >
+            {id}
+          </a>
+        ))}
+      </nav>
+    </>
   )
 }

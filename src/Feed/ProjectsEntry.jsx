@@ -23,18 +23,18 @@ function ProjectCard({ project }) {
         </div>
         <p className="mt-2 text-[15px] text-[#3a3a3a] leading-relaxed line-clamp-2">{project.description}</p>
         <p className="mt-3 font-mono text-[12px] text-[#6b6b6b]">{stackLabel}</p>
-        <p className="mt-3 font-mono text-[11px] text-[#9b9b9b]">
-          <a href={href} target="_blank" rel="noopener noreferrer" className="relative z-20">{domain}</a>
+        <p className="mt-3 font-mono text-[11px] text-[#6b6b6b]">
+          <a href={href} target="_blank" rel="noopener noreferrer" className="relative z-20 hover:text-[#a02334] hover:underline focus-visible:underline">{domain}</a>
           {project.liveLink && project.githubLink && (
             <>
               {'  ·  '}
-              <a href={project.githubLink} target="_blank" rel="noopener noreferrer" className="relative z-20">GitHub</a>
+              <a href={project.githubLink} target="_blank" rel="noopener noreferrer" className="relative z-20 hover:text-[#a02334] hover:underline focus-visible:underline">GitHub</a>
             </>
           )}
           {project.youtubeLink && (
             <>
               {'  ·  '}
-              <a href={project.youtubeLink} target="_blank" rel="noopener noreferrer" className="relative z-20">YouTube</a>
+              <a href={project.youtubeLink} target="_blank" rel="noopener noreferrer" className="relative z-20 hover:text-[#a02334] hover:underline focus-visible:underline">YouTube</a>
             </>
           )}
         </p>

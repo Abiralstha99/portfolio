@@ -1,14 +1,14 @@
 [
   {
     "title": "Cortex — Real-Time Multiplayer Quiz Platform",
-    "description": "Because studying alone is boring. Built a platform that turns notes into AI-generated quizzes you can play with friends. Behind the scenes, it's Redis, background workers, synchronized game state, and a lot of making sure everything happens at the right time.",
+    "description": "Turns notes into AI-generated quizzes for real-time multiplayer study with friends.",
     "stack": ["TypeScript", "React", "Socket.io", "Redis", "BullMQ", "PostgreSQL"],
     "githubLink": "https://github.com/Abiralstha99/Cortex",
     "featured": true
   },
   {
     "title": "Graph Analysis Automation — Schneider Prize Winner",
-    "description": "Scientists have better things to do than stare at thousands of CSV files. Built a tool for MRG Labs researchers that compares spectra, spots oxidation patterns, and processes 100,000+ data points in seconds.",
+    "description": "Analyzes MRG Labs spectra, flags oxidation patterns, and processes 100,000+ data points in seconds.",
     "image": "mrg",
     "stack": ["Python", "FastAPI", "TypeScript", "MySQL", "Gemini API"],
     "githubLink": "https://github.com/Abiralstha99/Graph-analysis-tool",
@@ -16,7 +16,7 @@
   },
   {
     "title": "Campus Ride Sharing App",
-    "description": "Somewhere on campus, two people are probably driving to the same place and don't know it. Built a ride-sharing platform that connects them using location, timing, and preferences, with real-time messaging and scheduling.",
+    "description": "Matches campus riders by location and time, with real-time messaging and scheduling.",
     "stack": ["TypeScript", "Express.js", "PostgreSQL", "Redis", "BullMQ"],
     "githubLink": "https://github.com/TejaswiAmatya/Campus-Ride",
     "featured": true
