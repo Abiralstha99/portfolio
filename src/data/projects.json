@@ -1,7 +1,29 @@
 [
   {
+    "title": "Cortex — Real-Time Multiplayer Quiz Platform",
+    "description": "Because studying alone is boring. Built a platform that turns notes into AI-generated quizzes you can play with friends. Behind the scenes, it's Redis, background workers, synchronized game state, and a lot of making sure everything happens at the right time.",
+    "stack": ["TypeScript", "React", "Socket.io", "Redis", "BullMQ", "PostgreSQL"],
+    "githubLink": "https://github.com/Abiralstha99/Cortex",
+    "featured": true
+  },
+  {
+    "title": "Graph Analysis Automation — Schneider Prize Winner",
+    "description": "Scientists have better things to do than stare at thousands of CSV files. Built a tool for MRG Labs researchers that compares spectra, spots oxidation patterns, and processes 100,000+ data points in seconds.",
+    "image": "mrg",
+    "stack": ["Python", "FastAPI", "TypeScript", "MySQL", "Gemini API"],
+    "githubLink": "https://github.com/Abiralstha99/Graph-analysis-tool",
+    "featured": true
+  },
+  {
+    "title": "Campus Ride Sharing App",
+    "description": "Somewhere on campus, two people are probably driving to the same place and don't know it. Built a ride-sharing platform that connects them using location, timing, and preferences, with real-time messaging and scheduling.",
+    "stack": ["TypeScript", "Express.js", "PostgreSQL", "Redis", "BullMQ"],
+    "githubLink": "https://github.com/TejaswiAmatya/Campus-Ride",
+    "featured": true
+  },
+  {
     "title": "foot-steps",
-    "description": "A full-stack travel photo app that automatically turns trip photos into an interactive timeline and map-based album using EXIF metadata and AI landmark detection.",
+    "description": "Turns trip photos into a map and timeline using photo metadata and landmark detection.",
     "image": "footsteps",
     "stack": ["React", "Node.js", "Express", "MongoDB"],
     "githubLink": "https://github.com/Abiralstha99/foot-steps",
@@ -9,28 +31,21 @@
   },
   {
     "title": "Inhibitor",
-    "description": "Chrome extension to reduce YouTube distractions – hide feed and recommendations, and set focused sessions.",
+    "description": "Hides YouTube's rabbit holes so you can finish what you came to do.",
     "image": "inhibitor",
     "stack": ["JavaScript"],
     "githubLink": "https://github.com/TejaswiAmatya/Inhibitor"
   },
   {
-    "title": "Grease Analysis Tool",
-    "description": "Software for analyzing grease absorption based on the infrared intake and identifying potential anomalies in samples by comparing with baseline data.",
-    "image": "mrg",
-    "stack": ["Python", "pandas", "NumPy", "Matplotlib"],
-    "githubLink": "https://github.com/anhducnguyen2006/mrg-labs-graphing-app"
-  },
-  {
     "title": "Cinemas",
-    "description": "A web application for managing cinemas and their shows. Built with React, Node.js, Express, and PostgreSQL.",
+    "description": "Keeps movie showtimes and screenings organized without the spreadsheet chaos.",
     "image": "cinemas",
     "stack": ["React", "Node.js", "Express", "PostgreSQL"],
     "githubLink": "https://github.com/Abiralstha99/Cinemas"
   },
   {
     "title": "Hennest",
-    "description": "Hennest is a financial management platform built with React, Clerk, and TailwindCSS that lets users connect bank accounts, set spending goals, and get real-time budget alerts with spending insights.",
+    "description": "Tracks spending, goals, and alerts so the budget stops being a guessing game.",
     "image": "hennest",
     "stack": ["React", "Tailwind CSS", "Clerk"],
     "githubLink": "https://github.com/Abiralstha99/HenNest",

@@ -1,7 +1,7 @@
 import { useState, useEffect, useRef } from 'react'
 import clsx from 'clsx'
 
-const sections = ['about', 'skills', 'experience', 'projects']
+const sections = ['about', 'education', 'skills', 'experience', 'projects']
 
 export default function SideBreadcrumb() {
   const [active, setActive] = useState('about')

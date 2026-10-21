@@ -2,37 +2,63 @@
   {
     "category": "Languages",
     "skills": [
-      {"name": "JavaScript", "logo": "https://img.icons8.com/color/48/javascript--v1.png"},
-      {"name": "TypeScript", "logo": "https://img.icons8.com/color/48/typescript.png"},
-      {"name": "C", "logo": "https://img.icons8.com/color/48/c-programming.png"},
       {"name": "Java", "logo": "https://img.icons8.com/color/48/java-coffee-cup-logo.png"},
-      {"name": "C#", "logo": "https://img.icons8.com/color/48/c-sharp-logo.png"}
+      {"name": "Python", "logo": "https://img.icons8.com/color/48/python.png"},
+      {"name": "TypeScript", "logo": "https://img.icons8.com/color/48/typescript.png"},
+      {"name": "JavaScript", "logo": "https://img.icons8.com/color/48/javascript--v1.png"},
+      {"name": "SQL", "logo": "https://img.icons8.com/color/48/sql.png"},
+      {"name": "C", "logo": "https://img.icons8.com/color/48/c-programming.png"},
+      {"name": "C#", "logo": "https://img.icons8.com/color/48/c-sharp-logo.png"},
+      {"name": "R", "logo": "https://img.icons8.com/color/48/r-project.png"}
     ]
   },
   {
-    "category": "Frameworks",
+    "category": "Frontend",
     "skills": [
       {"name": "React", "logo": "https://img.icons8.com/color/48/react-native.png"},
-      {"name": "Redux", "logo": "https://img.icons8.com/color/48/redux.png"},
-      {"name": "Tailwind CSS", "logo": "https://img.icons8.com/color/48/tailwindcss.png"},
-      {"name": "Node.js", "logo": "https://img.icons8.com/color/48/nodejs.png"},
-      {"name": "Express", "logo": "https://cdn.brandfetch.io/idh1lvV1BF/w/124/h/124/theme/dark/icon.jpeg?c=1bxid64Mup7aczewSAYMX&t=1756519165444"},
-      {"name": "MongoDB", "logo": "https://img.icons8.com/color/48/mongodb.png"},
-      {"name": "PostgreSQL", "logo": "https://img.icons8.com/?size=100&id=38561&format=png&color=000000"}
+      {"name": "Next.js", "logo": "https://cdn.jsdelivr.net/gh/devicons/devicon@latest/icons/nextjs/nextjs-original.svg"},
+      {"name": "Tailwind CSS", "logo": "https://img.icons8.com/color/48/tailwindcss.png"}
     ]
   },
   {
-    "category": "Tools",
+    "category": "Backend & Systems",
+    "skills": [
+      {"name": "Node.js", "logo": "https://img.icons8.com/color/48/nodejs.png"},
+      {"name": "Express.js", "logo": "https://cdn.brandfetch.io/idh1lvV1BF/w/124/h/124/theme/dark/icon.jpeg?c=1bxid64Mup7aczewSAYMX&t=1756519165444"},
+      {"name": "FastAPI", "logo": "https://cdn.jsdelivr.net/gh/devicons/devicon@latest/icons/fastapi/fastapi-original.svg"},
+      {"name": "Redis", "logo": "https://img.icons8.com/color/48/redis.png"},
+      {"name": "BullMQ", "logo": "https://bullmq.io/favicon.ico"},
+      {"name": "Socket.io", "logo": "https://cdn.jsdelivr.net/gh/devicons/devicon@latest/icons/socketio/socketio-original.svg"}
+    ]
+  },
+  {
+    "category": "Databases & Cloud",
+    "skills": [
+      {"name": "PostgreSQL", "logo": "https://img.icons8.com/?size=100&id=38561&format=png&color=000000"},
+      {"name": "MySQL", "logo": "https://img.icons8.com/color/48/mysql-logo.png"},
+      {"name": "AWS (EC2, S3, Lambda, CloudFront, SNS)", "logo": "https://img.icons8.com/color/48/amazon-web-services.png"},
+      {"name": "Docker", "logo": "https://img.icons8.com/color/48/docker.png"}
+    ]
+  },
+  {
+    "category": "AI/ML",
+    "skills": [
+      {"name": "scikit-learn", "logo": "https://cdn.jsdelivr.net/gh/devicons/devicon@latest/icons/scikitlearn/scikitlearn-original.svg"},
+      {"name": "LightGBM", "logo": "https://raw.githubusercontent.com/lightgbm-org/LightGBM/main/docs/logo/LightGBM_logo_black_text.svg"},
+      {"name": "XGBoost", "logo": "https://xgboost.ai/images/logo/xgboost-logo-trimmed.png"},
+      {"name": "LangChain", "logo": "https://python.langchain.com/favicon.ico"},
+      {"name": "SHAP", "logo": "https://shap.readthedocs.io/en/latest/_static/favicon.ico"}
+    ]
+  },
+  {
+    "category": "Developer Tools",
     "skills": [
       {"name": "Git", "logo": "https://img.icons8.com/color/48/git.png"},
-      {"name": "GitHub", "logo": "https://img.icons8.com/?size=100&id=106564&format=png&color=000000"},
+      {"name": "GitHub Actions", "logo": "https://cdn.jsdelivr.net/gh/devicons/devicon@latest/icons/githubactions/githubactions-original.svg"},
+      {"name": "Jest", "logo": "https://cdn.jsdelivr.net/gh/devicons/devicon@latest/icons/jest/jest-plain.svg"},
       {"name": "Postman", "logo": "https://cdn.brandfetch.io/idrVtxty7B/w/240/h/240/theme/dark/icon.png?c=1bxid64Mup7aczewSAYMX&t=1667906412376"},
-      {"name": "Figma", "logo": "https://img.icons8.com/color/48/figma--v1.png"},
-      {"name": "Docker", "logo": "https://img.icons8.com/color/48/docker.png"},
-      {"name": "Amazon S3 (AWS)", "logo": "https://img.icons8.com/color/48/amazon-web-services.png"},
-      {"name": "pandas", "logo": "https://img.icons8.com/color/48/python.png"},
-      {"name": "NumPy", "logo": "https://img.icons8.com/color/48/python.png"},
-      {"name": "Matplotlib", "logo": "https://img.icons8.com/color/48/python.png"}
+      {"name": "Linux", "logo": "https://img.icons8.com/color/48/linux.png"},
+      {"name": "Figma", "logo": "https://img.icons8.com/color/48/figma--v1.png"}
     ]
   }
 ]

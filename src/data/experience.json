@@ -1,24 +1,34 @@
 [
   {
-    "role": "AI/ML Fellow",
-    "company": "Break Through Tech",
-    "period": "May 2026 – Present",
-    "description": "Selected from 3,000+ applicants for a year-long AI/ML fellowship. Built end-to-end machine learning pipelines on datasets of 50K+ records, achieving 85% classification accuracy using scikit-learn and TensorFlow while strengthening foundations in neural networks and responsible AI.",
+    "role": "AI Studio Fellow",
+    "company": "Break Through Tech AI Studio × AWS",
+    "period": "Aug 2026 – Present",
+    "description": "Trying to predict what the Pacific Ocean is up to using 178K+ observations. Mostly Python, machine learning, and figuring out why the data refuses to cooperate.",
     "url": "breakthroughtech.org"
   },
   {
-    "role": "Product Designer Intern",
-    "company": "Develop for Good",
-    "period": "May 2026 – Present",
-    "description": "Collaborated with designers, engineers, and nonprofit stakeholders to build a mobile-first marketplace MVP. Translated product requirements into production-ready frontend features using Next.js and REST APIs while communicating technical tradeoffs to ensure alignment across technical and non-technical teams.",
-    "url": "developforgood.org"
+    "role": "Data Science Project Participant",
+    "company": "Neighborhood Behavioral Science",
+    "period": "Jul 2026 – Aug 2026",
+    "description": "Took an older NLP research pipeline, gave it a much-needed update, and made it work with newer occupational data. A lot of R and detective work."
+  },
+  {
+    "role": "Product Designer",
+    "company": "Connected to Culture",
+    "companyUrl": "https://www.connectedtoculture.org/",
+    "organization": "Develop for Good",
+    "organizationUrl": "https://developforgood.org/",
+    "period": "May 2026 – Aug 2026",
+    "description": "Helped turn an idea into an actual product. Worked on designing a marketplace that connects people with culture, focusing on making the experience simple, intuitive, and genuinely useful.",
+    "url": "connectedtoculture.org"
   },
   {
     "role": "Software Engineer Intern",
-    "company": "Sponsy",
-    "period": "March 2026 – May 2026",
-    "description": "Built core frontend features for the brand dashboard using Next.js and REST APIs, enabling brands to manage profiles and partnerships seamlessly. Designed the student-side PostgreSQL schema to support profiles, applications, and scholarship data at scale.",
-    "url": "https://scholarty.com/"
+    "company": "Swaya",
+    "companyUrl": "https://getswaya.com/",
+    "formerName": "Sponsy",
+    "period": "Mar 2026 – May 2026",
+    "description": "Worked on the stuff behind the scenes that makes a marketplace actually work. Built brand-facing features, APIs, and database structures with a small engineering team.",
+    "url": "getswaya.com"
   }
 ]
-

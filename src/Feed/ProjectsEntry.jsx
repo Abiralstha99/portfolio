@@ -5,23 +5,41 @@ const extractDomain = (url) => {
   try { return new URL(url).hostname.replace('www.', '') } catch { return url }
 }
 
+const featuredProjects = projects.filter((project) => project.featured)
+const otherProjects = projects.filter((project) => !project.featured)
+
 function ProjectCard({ project }) {
   const href = project.liveLink ?? project.githubLink
   const domain = extractDomain(href)
   const stackLabel = project.stack.join('  ·  ')
 
   return (
-    <a href={href} target="_blank" rel="noopener noreferrer" className="block group">
+    <div className="block group relative">
+      <a href={href} target="_blank" rel="noopener noreferrer" aria-label={`Open ${project.title}`} className="absolute inset-0 z-10" />
       <div className="border border-[#e5e5e5] rounded-lg p-5 group-hover:border-[#d0d0d0] transition-colors duration-200">
         <div className="flex justify-between items-start">
-          <span className="font-semibold text-[17px] text-[#1a1a1a]">{project.title}</span>
+          <span className="font-semibold text-[16px] text-[#1a1a1a]">{project.title}</span>
           <span className="text-[#6b6b6b] group-hover:text-[#a02334] transition-colors duration-200 text-[16px] leading-none mt-0.5">↗</span>
         </div>
         <p className="mt-2 text-[15px] text-[#3a3a3a] leading-relaxed line-clamp-2">{project.description}</p>
         <p className="mt-3 font-mono text-[12px] text-[#6b6b6b]">{stackLabel}</p>
-        <p className="mt-3 font-mono text-[11px] text-[#9b9b9b]">{domain}</p>
+        <p className="mt-3 font-mono text-[11px] text-[#9b9b9b]">
+          <a href={href} target="_blank" rel="noopener noreferrer" className="relative z-20">{domain}</a>
+          {project.liveLink && project.githubLink && (
+            <>
+              {'  ·  '}
+              <a href={project.githubLink} target="_blank" rel="noopener noreferrer" className="relative z-20">GitHub</a>
+            </>
+          )}
+          {project.youtubeLink && (
+            <>
+              {'  ·  '}
+              <a href={project.youtubeLink} target="_blank" rel="noopener noreferrer" className="relative z-20">YouTube</a>
+            </>
+          )}
+        </p>
       </div>
-    </a>
+    </div>
   )
 }
 
@@ -31,7 +49,13 @@ function ProjectsEntry() {
       <p className="font-mono text-[11px] tracking-[0.2em] uppercase text-[#6b6b6b] mb-4">Projects</p>
       <h2 className="font-display text-3xl sm:text-4xl text-[#1a1a1a] mb-8">Some of the things I've been building.</h2>
       <div className="space-y-4">
-        {projects.map((project) => (
+        {featuredProjects.map((project) => (
+          <ProjectCard key={project.title} project={project} />
+        ))}
+      </div>
+      <h3 className="font-mono text-[11px] tracking-[0.2em] uppercase text-[#6b6b6b] mt-8 mb-4">Other Things I've Built</h3>
+      <div className="space-y-4">
+        {otherProjects.map((project) => (
           <ProjectCard key={project.title} project={project} />
         ))}
       </div>
